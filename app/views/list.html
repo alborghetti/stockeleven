@@ -1,6 +1,6 @@
 <div class="container">
 	<!--Body content-->
-	<h2>Borsa Italiana Ranking</h2>
+	<h2>{{listText}}</h2>
 	<div class="dropdown">
 		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 			Previous Lists
@@ -8,7 +8,7 @@
 		</button>
 		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 			 <li ng-repeat="list in lists">
-             <a href="#">{{list.timestamp}}</a> 
+             <a href="#/list/{{listId}}/{{list.pushId}}">{{list.date}}</a> 
         </li>
 		</ul>
 	</div>

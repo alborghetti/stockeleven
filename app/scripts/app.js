@@ -25,15 +25,10 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/listItalia', {
-        templateUrl: 'views/listItalia.html',
-        controller: 'ListItaliaCtrl',
-        controllerAs: 'listItalia'
-      })
-      .when('/listNasdaq', {
-        templateUrl: 'views/listNasdaq.html',
-        controller: 'ListNasdaqCtrl',
-        controllerAs: 'listNasdaq'
+      .when('/list/:listId/:date', {
+        templateUrl: 'views/list.html',
+        controller: 'ListCtrl',
+        controllerAs: 'list'
       })
       .otherwise({
         redirectTo: '/'
