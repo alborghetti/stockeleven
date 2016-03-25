@@ -19,7 +19,7 @@
       $scope.listText = 'FtseMib Ranking';
       break;
       case 'nasdaq':
-      $scope.listText = 'Nasdaq Ranking'
+      $scope.listText = 'Nasdaq Ranking';
       break;
       default:
       $scope.listText = 'List not found';
