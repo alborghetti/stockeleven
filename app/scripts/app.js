@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'firebase'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -24,10 +25,15 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/listItalia', {
+        templateUrl: 'views/listItalia.html',
+        controller: 'ListItaliaCtrl',
+        controllerAs: 'listItalia'
+      })
+      .when('/listNasdaq', {
+        templateUrl: 'views/listNasdaq.html',
+        controller: 'ListNasdaqCtrl',
+        controllerAs: 'listNasdaq'
       })
       .otherwise({
         redirectTo: '/'
