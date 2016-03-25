@@ -3,7 +3,5 @@
 /.tmp
 /.sass-cache
 /bower_components
-<<<<<<< HEAD
 *.sublime*
-=======
->>>>>>> 2cf2d54048cc14b3e0631623bf5b02078849c376
+
