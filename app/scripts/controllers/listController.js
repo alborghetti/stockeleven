@@ -16,10 +16,10 @@
 
     switch ($routeParams.listId) {
       case 'milano':
-      $scope.listText = 'Ftse Italia all-share Ranking';
+      $scope.listText = 'FTSE Italia Ranking';
       break;
       case 'nasdaq':
-      $scope.listText = 'Nasdaq Ranking';
+      $scope.listText = 'NASDAQ Ranking';
       break;
       default:
       $scope.listText = 'List not found';
@@ -74,8 +74,4 @@
     }, function (errorObject) {
       console.log("The read failed: " + errorObject.code);
     });
-
-
-
-
   });
