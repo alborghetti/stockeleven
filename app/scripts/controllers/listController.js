@@ -16,7 +16,7 @@
 
     switch ($routeParams.listId) {
       case 'milano':
-      $scope.listText = 'FtseMib Ranking';
+      $scope.listText = 'Ftse Italia all-share Ranking';
       break;
       case 'nasdaq':
       $scope.listText = 'Nasdaq Ranking';
@@ -31,9 +31,11 @@
       var lastList = snapshot.val();
       for (var prop in lastList) {
         //console.log("obj." + prop + " = " + lastList[prop]);
+        var date = new Date(lastList[prop].timestamp);
         $scope.$apply(function() {
           $scope.stocks = lastList[prop].stocks;
           $scope.orderProp = 'rank';
+          $scope.listDate = date.toDateString();
         });
       }
       }, function (errorObject) {
@@ -43,9 +45,11 @@
       var selectedListref = new Firebase("https://stockeleven.firebaseio.com/"+$routeParams.listId+"/"+$routeParams.date);
       selectedListref.once("value", function(snapshot) {
         var list = snapshot.val();
+        var date = new Date(list.timestamp);
         $scope.$apply(function() {
           $scope.stocks = list.stocks;
           $scope.orderProp = 'rank';
+          $scope.listDate = date.toDateString();
         });
       }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
