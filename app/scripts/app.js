@@ -30,7 +30,34 @@ angular
         controller: 'ListCtrl',
         controllerAs: 'list'
       })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
+      })
+      .when('/register', {
+        templateUrl: 'views/register.html',
+        controller: 'RegisterCtrl',
+        controllerAs: 'register'
+      })
+      .when('/passwordRecovery', {
+        templateUrl: 'views/passwordRecovery.html',
+        controller: 'PasswordRecoveryCtrl',
+        controllerAs: 'passwordRecovery'
+      })
       .otherwise({
         redirectTo: '/'
       });
   });
+
+  angular.module('stockElevenApp')
+  .directive('stockelevenBack', ['$window', function($window) {
+        return {
+            restrict: 'A',
+            link: function (scope, elem, attrs) {
+                elem.bind('click', function () {
+                    $window.history.back();
+                });
+            }
+        };
+    }]);

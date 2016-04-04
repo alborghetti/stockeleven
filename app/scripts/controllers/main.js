@@ -8,6 +8,9 @@
  * Controller of the stockElevenApp
  */
 angular.module('stockElevenApp')
-  .controller('MainCtrl', function () {
-   
+  .controller('MainCtrl', function ($scope, $window) {
+	$scope.$back = function() { 
+		$window.history.back();
+		$scope.$apply();
+	};   
   });
