@@ -10,13 +10,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 744.09448819 1052.3622047"
+   width="350"
+   height="168"
+   viewBox="0 0 350 168"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="OLO_LOGO_10.svg">
+   sodipodi:docname="OLO_LOGO.svg">
   <defs
      id="defs4">
     <linearGradient
@@ -36,7 +36,7 @@
          id="stop11518" />
     </linearGradient>
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Clean Edges"
        id="filter7358">
       <feComposite
@@ -45,7 +45,9 @@
          k1="0"
          k2="1"
          result="composite1"
-         id="feComposite7360" />
+         id="feComposite7360"
+         k3="0"
+         k4="0" />
       <feColorMatrix
          in="composite1"
          values="1"
@@ -78,7 +80,6 @@
          in="colormatrix2"
          in2="SourceGraphic"
          operator="in"
-         k2="1"
          result="fbSourceGraphic"
          id="feComposite7372" />
       <feColorMatrix
@@ -101,12 +102,11 @@
          id="feComposite7636"
          in2="composite1"
          in="composite1"
-         k2="1"
          operator="in"
          result="composite2" />
     </filter>
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Clean Edges"
        id="filter7374">
       <feComposite
@@ -115,7 +115,9 @@
          k1="0"
          k2="1"
          result="composite1"
-         id="feComposite7376" />
+         id="feComposite7376"
+         k3="0"
+         k4="0" />
       <feColorMatrix
          in="composite1"
          values="1"
@@ -148,7 +150,6 @@
          in="colormatrix2"
          in2="SourceGraphic"
          operator="in"
-         k2="1"
          result="fbSourceGraphic"
          id="feComposite7388" />
       <feColorMatrix
@@ -171,12 +172,11 @@
          id="feComposite7644"
          in2="composite1"
          in="composite1"
-         k2="1"
          operator="in"
          result="composite2" />
     </filter>
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Clean Edges"
        id="filter7390">
       <feComposite
@@ -185,7 +185,9 @@
          k1="0"
          k2="1"
          result="composite1"
-         id="feComposite7392" />
+         id="feComposite7392"
+         k3="0"
+         k4="0" />
       <feColorMatrix
          in="composite1"
          values="1"
@@ -218,7 +220,6 @@
          in="colormatrix2"
          in2="SourceGraphic"
          operator="in"
-         k2="1"
          result="fbSourceGraphic"
          id="feComposite7404" />
       <feColorMatrix
@@ -241,12 +242,11 @@
          id="feComposite7652"
          in2="composite1"
          in="composite1"
-         k2="1"
          operator="in"
          result="composite2" />
     </filter>
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Clean Edges"
        id="filter7406">
       <feComposite
@@ -255,7 +255,9 @@
          k1="0"
          k2="1"
          result="composite1"
-         id="feComposite7408" />
+         id="feComposite7408"
+         k3="0"
+         k4="0" />
       <feColorMatrix
          in="composite1"
          values="1"
@@ -288,7 +290,6 @@
          in="colormatrix2"
          in2="SourceGraphic"
          operator="in"
-         k2="1"
          result="fbSourceGraphic"
          id="feComposite7420" />
       <feColorMatrix
@@ -311,12 +312,11 @@
          id="feComposite7660"
          in2="composite1"
          in="composite1"
-         k2="1"
          operator="in"
          result="composite2" />
     </filter>
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Colorize"
        id="filter7822">
       <feComposite
@@ -325,7 +325,9 @@
          k1="0"
          k2="1"
          result="composite1"
-         id="feComposite7824" />
+         id="feComposite7824"
+         k3="0"
+         k4="0" />
       <feColorMatrix
          in="composite1"
          values="1"
@@ -358,12 +360,11 @@
          in="colormatrix2"
          in2="SourceGraphic"
          operator="in"
-         k2="1"
          result="composite2"
          id="feComposite7836" />
     </filter>
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Colorize"
        id="filter7838">
       <feComposite
@@ -372,7 +373,9 @@
          k1="0"
          k2="1"
          result="composite1"
-         id="feComposite7840" />
+         id="feComposite7840"
+         k3="0"
+         k4="0" />
       <feColorMatrix
          in="composite1"
          values="1"
@@ -405,12 +408,11 @@
          in="colormatrix2"
          in2="SourceGraphic"
          operator="in"
-         k2="1"
          result="composite2"
          id="feComposite7852" />
     </filter>
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Colorize"
        id="filter7854">
       <feComposite
@@ -419,7 +421,9 @@
          k1="0"
          k2="1"
          result="composite1"
-         id="feComposite7856" />
+         id="feComposite7856"
+         k3="0"
+         k4="0" />
       <feColorMatrix
          in="composite1"
          values="1"
@@ -452,7 +456,6 @@
          in="colormatrix2"
          in2="SourceGraphic"
          operator="in"
-         k2="1"
          result="composite2"
          id="feComposite7868" />
     </filter>
@@ -466,16 +469,17 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.7502414"
      inkscape:cx="388.77087"
-     inkscape:cy="621.51248"
+     inkscape:cy="108.23705"
      inkscape:document-units="px"
-     inkscape:current-layer="layer11"
+     inkscape:current-layer="layer10"
      showgrid="false"
      inkscape:snap-center="false"
-     inkscape:window-width="1600"
-     inkscape:window-height="841"
-     inkscape:window-x="-8"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="1432"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     units="px" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -492,31 +496,32 @@
      inkscape:groupmode="layer"
      id="layer13"
      inkscape:label="Shadow"
-     style="display:inline;opacity:1">
+     style="display:inline;opacity:1"
+     transform="translate(0,-884.35948)">
     <ellipse
        style="fill:#4d4d4d;filter:url(#filter7854)"
        id="path3360-4"
-       cx="296.0209"
-       cy="92.452698"
+       cx="282.69186"
+       cy="974.83539"
        rx="61.785713"
        ry="60.35714" />
     <path
        style="fill:#4d4d4d;filter:url(#filter7838)"
        id="path3360-18-7"
        sodipodi:type="arc"
-       sodipodi:cx="207.09236"
-       sodipodi:cy="91.02417"
+       sodipodi:cx="193.76329"
+       sodipodi:cy="973.40686"
        sodipodi:rx="62.5"
        sodipodi:ry="59.999996"
        sodipodi:start="0"
        sodipodi:end="3.1806533"
-       d="m 269.59236,91.02417 a 62.5,59.999996 0 0 1 -31.95737,52.34771 62.5,59.999996 0 0 1 -63.19135,-1.18493 62.5,59.999996 0 0 1 -29.80361,-53.505823"
+       d="m 256.26329,973.40686 a 62.5,59.999996 0 0 1 -31.95737,52.34774 62.5,59.999996 0 0 1 -63.19136,-1.185 62.5,59.999996 0 0 1 -29.8036,-53.50578"
        sodipodi:open="true" />
     <ellipse
        style="fill:#4d4d4d;filter:url(#filter7822)"
        id="path3360-18-6-5"
-       cx="96.378044"
-       cy="93.52417"
+       cx="83.048996"
+       cy="975.90686"
        rx="61.785713"
        ry="60.35714" />
   </g>
@@ -524,12 +529,13 @@
      inkscape:groupmode="layer"
      id="layer11"
      inkscape:label="O2_White"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(0,-884.35948)">
     <ellipse
        style="fill:#ffffff"
        id="path3360-1-6-4"
-       cx="289.29578"
-       cy="78.404541"
+       cx="275.96674"
+       cy="960.78723"
        rx="67.952812"
        ry="66.143181" />
   </g>
@@ -537,90 +543,96 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="O2"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(0,-884.35948)">
     <ellipse
        style="fill:#98bfdc;fill-opacity:1;stroke:#dcb699;stroke-width:2.0999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path3360"
-       cx="289.41376"
-       cy="78.524109"
+       cx="276.08472"
+       cy="960.9068"
        rx="61.785713"
        ry="60.35714" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer12"
-     inkscape:label="L_White">
+     inkscape:label="L_White"
+     transform="translate(0,-884.35948)">
     <path
        style="fill:#ffffff;stroke:none"
        id="path3360-1"
        sodipodi:type="arc"
-       sodipodi:cx="200.48521"
-       sodipodi:cy="77.307648"
+       sodipodi:cx="187.15614"
+       sodipodi:cy="959.69031"
        sodipodi:rx="69.285713"
        sodipodi:ry="65.502251"
        sodipodi:start="0"
        sodipodi:end="4.7199597"
-       d="m 269.77093,77.307648 a 69.285713,65.502251 0 0 1 -42.89242,60.563522 69.285713,65.502251 0 0 1 -75.5708,-14.42209 69.285713,65.502251 0 0 1 -14.68257,-71.551266 69.285713,65.502251 0 0 1 64.38461,-40.09054 l -0.52454,65.500374 z" />
+       d="m 256.44186,959.69031 a 69.285713,65.502251 0 0 1 -42.89242,60.56349 69.285713,65.502251 0 0 1 -75.5708,-14.4221 69.285713,65.502251 0 0 1 -14.68257,-71.55123 69.285713,65.502251 0 0 1 64.38461,-40.09054 l -0.52454,65.50038 z" />
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.799972;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect11655"
        width="74.842667"
        height="6.1980968"
-       x="195.17046"
-       y="71.911102" />
+       x="181.84138"
+       y="954.29376" />
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.75876635;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect11655-6"
        width="66.886444"
        height="6.2393026"
-       x="-78.796234"
-       y="-207.05397"
+       x="-961.17889"
+       y="-193.7249"
        transform="matrix(0,-1,-1,0,0,0)" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer7"
-     inkscape:label="L">
+     inkscape:label="L"
+     transform="translate(0,-884.35948)">
     <path
        style="fill:#98bfdc;fill-opacity:1;stroke:#dcb699;stroke-width:2.0999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path3360-18"
        sodipodi:type="arc"
-       sodipodi:cx="200.48521"
-       sodipodi:cy="77.095581"
+       sodipodi:cx="187.15614"
+       sodipodi:cy="959.47827"
        sodipodi:rx="62.5"
        sodipodi:ry="59.999996"
        sodipodi:start="0"
        sodipodi:end="4.7165637"
-       d="M 262.98521,77.095581 A 62.5,59.999996 0 0 1 224.34265,132.55228 62.5,59.999996 0 0 1 156.19889,119.43333 62.5,59.999996 0 0 1 142.81791,53.961127 62.5,59.999996 0 0 1 200.74613,17.096108 l -0.26092,59.999473 z" />
+       d="m 249.65614,959.47827 a 62.5,59.999996 0 0 1 -38.64256,55.45673 62.5,59.999996 0 0 1 -68.14376,-13.119 62.5,59.999996 0 0 1 -13.38098,-65.47218 62.5,59.999996 0 0 1 57.92822,-36.86502 l -0.26092,59.99947 z" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer8"
-     inkscape:label="O1_White">
+     inkscape:label="O1_White"
+     transform="translate(0,-884.35948)">
     <ellipse
        style="fill:#ffffff"
        id="path3360-1-6"
-       cx="89.723076"
-       cy="79.643433"
+       cx="76.394028"
+       cy="962.02612"
        rx="69.285713"
        ry="67.14286" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer10"
-     inkscape:label="O1">
+     inkscape:label="O1"
+     transform="translate(0,-884.35948)">
     <ellipse
        style="fill:#98bfdc;fill-opacity:1;stroke:#dcb699;stroke-width:2.0999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path3360-18-6"
-       cx="89.770897"
-       cy="79.595612"
+       cx="76.441849"
+       cy="961.97827"
        rx="61.785713"
        ry="60.35714" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer1"
-     inkscape:label="O3">
+     inkscape:label="O3"
+     transform="translate(0,-884.35948)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:128.99999619%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
