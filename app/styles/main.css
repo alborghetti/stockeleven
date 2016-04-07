@@ -43,3 +43,23 @@ body {
   border-top-right-radius: 0;
 }
 
+.list-market-box-1 {
+  min-height: 150px;
+}
+
+.list-market-box-2 {
+  min-height: 310px;
+}
+
+.list-box {
+  min-height: 150px;
+}
+
+.list-box:hover,
+.list-box:focus,
+.list-box:active {
+    padding: 12px;
+    border-width: 4px;
+    border-color: #005E80;
+    text-decoration: none;
+}

@@ -26,12 +26,12 @@ angular.module('stockElevenApp')
 			    $scope.$apply(function () {
 						$scope.vm.error = false;
 						$scope.vm.dataLoading = false;
-            			$location.path('/'); // path not hash
+            			$location.path('/app/'+authData.uid);
 				});
 			  }
 			}, {
   				remember: "sessionOnly"
 			});
 	  	}
-   
+
   });

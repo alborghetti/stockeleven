@@ -50,6 +50,11 @@ angular
         controller: 'PasswordRecoveryCtrl',
         controllerAs: 'passwordRecovery'
       })
+      .when('/app/:userId', {
+        templateUrl: 'views/appHome.html',
+        controller: 'AppHomeCtrl',
+        controllerAs: 'appHome'
+      })
       .otherwise({
         redirectTo: '/'
       });
