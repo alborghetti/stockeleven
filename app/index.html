@@ -31,18 +31,9 @@
               <a class="navbar-brand" href="#/"><img src="images/OLO_LOGO.svg" width="64px" ></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#/">Home</a></li>
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown">Lists <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#/list/milano/current">FTSE Italia</a></li>
-                    <li><a href="#/list/nasdaq/current">NASDAQ</a></li>
-                  </ul>
-                </li>
+            <ul class="nav navbar-nav">
                 <li><a href="#/about">About</a></li>
               </ul>
-
               <div ng-controller="MainCtrl" ng-show="!isLoggedIn" class="ng-hide">
                 <ul class="nav navbar-nav navbar-right">
                   <li ><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -51,10 +42,9 @@
               </div>
               <div ng-controller="MainCtrl" ng-show="isLoggedIn" class="ng-hide" >
                 <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#/app"><span class="glyphicon glyphicon-user"></span> {{userName}}</a></li>
                   <li><a href="#/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-                </ul>
               </div>
-
             </div>
           </div>
         </nav>

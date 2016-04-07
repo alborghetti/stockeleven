@@ -45,21 +45,35 @@ body {
 
 .list-market-box-1 {
   min-height: 150px;
+  border-width: 2px;
+  border-color: #337ab7;
+  background-color: #f8f8f8;
 }
 
 .list-market-box-2 {
-  min-height: 310px;
+  min-height: 320px;
+  border-width: 2px;
+  border-color: #337ab7;
+  background-color: #f8f8f8;
 }
 
 .list-box {
   min-height: 150px;
+  border-width: 2px;
+  border-color: #337ab7;
+}
+
+.list-box-disabled {
+  min-height: 150px;
+  border-width: 2px;
+  border-color: #e7e7e7;
 }
 
 .list-box:hover,
 .list-box:focus,
 .list-box:active {
-    padding: 12px;
-    border-width: 4px;
-    border-color: #005E80;
+    padding: 14px;
+    border-width: 6px;
+    border-color: #337ab7;
     text-decoration: none;
 }

@@ -50,7 +50,7 @@ angular
         controller: 'PasswordRecoveryCtrl',
         controllerAs: 'passwordRecovery'
       })
-      .when('/app/:userId', {
+      .when('/app', {
         templateUrl: 'views/appHome.html',
         controller: 'AppHomeCtrl',
         controllerAs: 'appHome'

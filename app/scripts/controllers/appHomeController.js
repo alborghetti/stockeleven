@@ -8,9 +8,19 @@
    * Controller of the stockElevenApp
    */
    angular.module('stockElevenApp')
-   .controller('AppHomeCtrl', function ($scope, $routeParams) {
+   .controller('AppHomeCtrl', function ($scope) {
 
-   	var ref = new Firebase("https://stockeleven.firebaseio.com/"+$routeParams.userId);
+    $scope.isLoggedIn = false;
+
+   	var ref = new Firebase("https://stockeleven.firebaseio.com/");
+    ref.onAuth(function(authData) {
+      if (authData) {
+        $scope.isLoggedIn = true;
+
+      } else {
+        $scope.isLoggedIn = false;
+      }
+    });
 
 
   });

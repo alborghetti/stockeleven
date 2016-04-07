@@ -26,7 +26,7 @@ angular.module('stockElevenApp')
 			    $scope.$apply(function () {
 						$scope.vm.error = false;
 						$scope.vm.dataLoading = false;
-            			$location.path('/app/'+authData.uid);
+            			$location.path('/app');
 				});
 			  }
 			}, {
