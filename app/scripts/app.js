@@ -55,9 +55,7 @@ angular
         controller: 'AppHomeCtrl',
         controllerAs: 'appHome'
       })
-      .otherwise({
-        redirectTo: '/'
-      });
+
   });
 
   angular.module('stockElevenApp')

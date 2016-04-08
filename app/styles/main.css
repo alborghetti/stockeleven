@@ -82,28 +82,28 @@ body > .container {
  /* Home app styles */
 .list-market-box-1 {
   min-height: 150px;
-  border-width: 2px;
+  border-width: 3px;
   border-color: #337ab7;
-  background-color: #f8f8f8;
+  background-color: #b8b7b5;
 }
 
 .list-market-box-2 {
   min-height: 320px;
-  border-width: 2px;
+  border-width: 3px;
   border-color: #337ab7;
-  background-color: #f8f8f8;
+  background-color: #b8b7b5;
 }
 
 .list-box {
   min-height: 150px;
-  border-width: 2px;
+  border-width: 3px;
   border-color: #337ab7;
 }
 
 .list-box-disabled {
   min-height: 150px;
-  border-width: 2px;
-  border-color: #e7e7e7;
+  border-width: 3px;
+  border-color: #b8b7b5;
 }
 
 .list-box:hover,
