@@ -30,6 +30,11 @@ angular
         controller: 'ListCtrl',
         controllerAs: 'list'
       })
+      .when('/demoList/:listId', {
+        templateUrl: 'views/demoList.html',
+        controller: 'DemoListCtrl',
+        controllerAs: 'list'
+      })
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',

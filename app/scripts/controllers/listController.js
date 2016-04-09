@@ -2,9 +2,9 @@
 
   /**
    * @ngdoc function
-   * @name stockElevenApp.controller:ListItaliaCtrl
+   * @name stockElevenApp.controller:ListCtrl
    * @description
-   * # List Italia stocks controller
+   * # List controller
    * Controller of the stockElevenApp
    */
    angular.module('stockElevenApp')
