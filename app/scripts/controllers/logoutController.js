@@ -6,9 +6,10 @@
  * Controller of login page
  */
 angular.module('stockElevenApp')
-  .controller('LogoutCtrl', function ($scope, $firebaseAuth) {
+  .controller('LogoutCtrl', function ($scope, $firebaseAuth, $location) {
   	
   	var ref = new Firebase("https://stockeleven.firebaseio.com/");
 	ref.unauth();
+	$location.path('/');
    
   });

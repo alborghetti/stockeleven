@@ -13,102 +13,109 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/simple-sidebar.css">
     <!-- endbuild -->
   </head>
   <body ng-app="stockElevenApp" >
       <!--[if lte IE 8]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+      <![endif]-->
+      <nav class="navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/"><img src="images/stockeleven_logo.svg" width="160px" ></a>
+          </div>
+          <div class="collapse navbar-collapse navbar-ex1-collapse" id="myNavbar">
+            <div ng-controller="MainCtrl" ng-show="!isLoggedIn" class="ng-hide">
+              <ul class="nav navbar-nav navbar-right">
+                <li ><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li ><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              </ul>
+            </div>
+            <div ng-controller="MainCtrl" ng-show="isLoggedIn" class="ng-hide" >
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-user"></span> {{userName}} <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#/app">My Lists</a></li>
+                    <li><a href="#/">Virtual Portfolios</a></li>
+                    <li><a href="#/">My Portfolios</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#/">User settings</a></li>
+                    <li><a href="#/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main part -->
+      <div ng-view=""></div>
+
+
+      
+
+      <!-- Footer part -->
+      <footer>
+        <div class="navbar navbar-inverse navbar-fixed-bottom">
           <div class="container">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#/"><img src="images/stockeleven_logo.svg" width="160px" ></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#footer-body"> 
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
             </div>
-            <div class="collapse navbar-collapse navbar-ex1-collapse" id="myNavbar">
-              <div ng-controller="MainCtrl" ng-show="!isLoggedIn" class="ng-hide">
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#/about">About Stock Eleven</a></li>
-                  <li ><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                  <li ><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <div class="navbar-collapse collapse" id="footer-body">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/about" class="">About Us</a>
+                    </li>
+                    <li><a href="#/contact" class="">Contact Us</a>
+                    </li>
+                    <li><a href="#/conditions" class="">Terms &amp; Conditions</a>
+                    </li>
+                    <li><a href="#/privacy" class="">Privacy Policy</a>
+                    </li>
                 </ul>
-              </div>
-              <div ng-controller="MainCtrl" ng-show="isLoggedIn" class="ng-hide" >
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#/about">About Stock Eleven</a></li>
-                  <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                      <span class="glyphicon glyphicon-user"></span> {{userName}} <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li><a href="#/app">My Lists</a></li>
-                      <li><a href="#/">Virtual Portfolios</a></li>
-                      <li><a href="#/">My Portfolios</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a href="#/">User settings</a></li>
-                      <li><a href="#/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
-        </nav>
-        <div class="container">
-        <br>
-          <div ng-view=""></div>
         </div>
-       
+      </footer>
 
-        <!-- Footer part -->
-        <div class="footer">
-          <div class="container">
-            <p class="text-muted">&copy; <a href="http://olomobile.it"><img src="images/OLO_LOGO.svg" width="56px" ></a> 2016</p>
-          </div>
-        </div>
+      <!-- build:js(.) scripts/vendor.js -->
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-route/angular-route.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/angular-touch/angular-touch.js"></script>
+      <script src="bower_components/firebase/firebase.js"></script>
+      <script src="bower_components/angularfire/dist/angularfire.js"></script>
+      <!-- endbower -->
+      <!-- endbuild -->
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-        <script>
-         !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-           (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-           r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-         }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-         ga('create', 'UA-XXXXX-X');
-         ga('send', 'pageview');
-       </script>
-
-       <!-- build:js(.) scripts/vendor.js -->
-       <!-- bower:js -->
-       <script src="bower_components/jquery/dist/jquery.js"></script>
-       <script src="bower_components/angular/angular.js"></script>
-       <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-       <script src="bower_components/angular-animate/angular-animate.js"></script>
-       <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-       <script src="bower_components/angular-resource/angular-resource.js"></script>
-       <script src="bower_components/angular-route/angular-route.js"></script>
-       <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-       <script src="bower_components/angular-touch/angular-touch.js"></script>
-       <script src="bower_components/firebase/firebase.js"></script>
-       <script src="bower_components/angularfire/dist/angularfire.js"></script>
-       <!-- endbower -->
-       <!-- endbuild -->
-
-       <!-- build:js({.tmp,app}) scripts/scripts.js -->
-       <script src="scripts/app.js"></script>
-       <script src="scripts/controllers/main.js"></script>
-       <script src="scripts/controllers/listController.js"></script>
-       <script src="scripts/controllers/demoListController.js"></script>
-       <script src="scripts/controllers/loginController.js"></script>
-       <script src="scripts/controllers/logoutController.js"></script>
-       <script src="scripts/controllers/registerController.js"></script>
-       <script src="scripts/controllers/passwordRecoveryController.js"></script>
-       <script src="scripts/controllers/appHomeController.js"></script>
-       <!-- endbuild -->
-     </body>
-     </html>
+      <!-- build:js({.tmp,app}) scripts/scripts.js -->
+      <script src="scripts/app.js"></script>
+      <script src="scripts/controllers/main.js"></script>
+      <script src="scripts/controllers/listController.js"></script>
+      <script src="scripts/controllers/demoListController.js"></script>
+      <script src="scripts/controllers/loginController.js"></script>
+      <script src="scripts/controllers/logoutController.js"></script>
+      <script src="scripts/controllers/registerController.js"></script>
+      <script src="scripts/controllers/passwordRecoveryController.js"></script>
+      <script src="scripts/controllers/appHomeController.js"></script>
+      <!-- endbuild -->
+    </body>
+  </html>

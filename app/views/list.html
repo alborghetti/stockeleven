@@ -1,49 +1,54 @@
-<div class="row">
-	<div class="col-sm-12">
-	<div class="panel panel-info">
-		<div class="panel-heading">
-			<h2>{{listText}}</h2>
-			<p>List generated on {{listDate}}</p>
-		</div>
-		<div class="panel-body">
-			<div class="dropdown">
-				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-					Previous Lists
-					<span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-					<li ng-repeat="list in lists">
-						<a href="#/list/{{listId}}/{{list.pushId}}">{{list.date}}</a>
-					</li>
-				</ul>
+<div class="container">
+<br>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h2>{{listText}}</h2>
+					<p>List generated on {{listDate}}</p>
+				</div>
+				<div class="panel-body">
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							Previous Lists
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li ng-repeat="list in lists">
+								<a href="#/list/{{listId}}/{{list.pushId}}">{{list.date}}</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Company</th>
+								<th>Stock</th>
+								<th>Price</th>
+								<th>PE</th>
+								<th>EPS</th>
+								<th>High 52</th>
+								<th>Distance</th>
+								<th>Rank</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="stock in stocks | filter:query | orderBy:orderProp">
+								<td>{{stock.company}}</td>
+								<td>{{stock.stock}}</td>
+								<td>{{stock.price}}</td>
+								<td>{{stock.pe}}</td>
+								<td>{{stock.eps}}</td>
+								<td>{{stock.high52}}</td>
+								<td>{{stock.distance}}</td>
+								<td>{{stock.rank}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Company</th>
-					<th>Stock</th>
-					<th>Price</th>
-					<th>PE</th>
-					<th>EPS</th>
-					<th>High 52</th>
-					<th>Distance</th>
-					<th>Rank</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="stock in stocks | filter:query | orderBy:orderProp">
-					<td>{{stock.company}}</td>
-					<td>{{stock.stock}}</td>
-					<td>{{stock.price}}</td>
-					<td>{{stock.pe}}</td>
-					<td>{{stock.eps}}</td>
-					<td>{{stock.high52}}</td>
-					<td>{{stock.distance}}</td>
-					<td>{{stock.rank}}</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
 	</div>
 </div>
