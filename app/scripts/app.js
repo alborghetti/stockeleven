@@ -60,6 +60,12 @@ angular
         controller: 'AppHomeCtrl',
         controllerAs: 'appHome'
       })
+      .otherwise({
+        controller : function(){
+            window.location.replace('/404.html');
+        }, 
+        template : "<div></div>"
+      });
 
   });
 

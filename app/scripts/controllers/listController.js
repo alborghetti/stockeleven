@@ -57,7 +57,7 @@
     }
 
 
-    ref.once("value", function(snapshot) {
+    ref.limitToLast(15).once("value", function(snapshot) {
       var snapshotLists = snapshot.val();
       var lists = [];
       for (var prop in snapshotLists) {
@@ -68,6 +68,9 @@
           date: date.toDateString()
         });
       }
+      lists.sort(function(a, b) {
+        return parseFloat(b.timestamp) - parseFloat(a.timestamp);
+      });
       $scope.$apply(function() {
         $scope.lists = lists;
       });
