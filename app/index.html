@@ -19,7 +19,7 @@
       <!--[if lte IE 8]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
-      <nav class="navbar-inverse navbar-fixed-top">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -60,33 +60,15 @@
       <!-- Main part -->
       <div ng-view=""></div>
 
-
-      
-
       <!-- Footer part -->
-      <footer>
-        <div class="navbar navbar-inverse navbar-fixed-bottom">
-          <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#footer-body"> 
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="navbar-collapse collapse" id="footer-body">
-                <ul class="nav navbar-nav">
-                    <li><a href="#/about" class="">About Us</a>
-                    </li>
-                    <li><a href="#/contact" class="">Contact Us</a>
-                    </li>
-                    <li><a href="#/conditions" class="">Terms &amp; Conditions</a>
-                    </li>
-                    <li><a href="#/privacy" class="">Privacy Policy</a>
-                    </li>
-                </ul>
-            </div>
-          </div>
+      <footer class="footer">
+        <div class="container">
+          <p class="text-muted">
+            <a class="text-muted" href="#/about" class="">About Us</a>
+            <a class="text-muted" href="#/contact" class="">Contact Us</a>
+            <a class="text-muted" href="#/conditions" class="">Terms &amp; Conditions</a>
+            <a class="text-muted" href="#/privacy" class="">Privacy Policy</a>
+          </p>
         </div>
       </footer>
 
