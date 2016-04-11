@@ -97,13 +97,13 @@ body {
 }
 
 .list-box {
-  min-height: 150px;
+  min-height: 193.328px;
   border-width: 3px;
   border-color: #337ab7;
 }
 
 .list-box-disabled {
-  min-height: 150px;
+  min-height: 193.328px;
   border-width: 3px;
   border-color: #b8b7b5;
 }
@@ -115,6 +115,12 @@ body {
   border-width: 6px;
   border-color: #337ab7;
   text-decoration: none;
+}
+
+.list-button {
+  position: absolute;
+  right: 35px;
+  bottom: 35px;
 }
 
  /* Footer */
@@ -130,6 +136,5 @@ body {
   margin: 20px 0;
   padding-right: 20px;
   color: #99d4ff;
-  bottom: 0;
   margin-bottom: 0;
 }
