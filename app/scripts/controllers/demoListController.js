@@ -19,9 +19,9 @@
         var List = snapshot.val();
         var date = new Date(List.timestamp);
         $scope.$apply(function() {
-          $scope.stocks = List.stocks;
-          $scope.listText = List.text;
-          $scope.orderProp = 'rank';
+          $scope.stocks = List.stocks.slice(0,29);
+          $scope.listText = List.description;
+          $scope.orderProp = 'finalRank';
           $scope.listDate = date.toDateString();
         });
       }, function (errorObject) {
