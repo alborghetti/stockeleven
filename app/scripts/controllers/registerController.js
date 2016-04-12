@@ -9,6 +9,12 @@
 	 angular.module('stockElevenApp')
 	 .controller('RegisterCtrl', function ($scope, $firebaseAuth) {
 
+	 	$scope.registerTmp = function () {
+	 		$scope.vm.error = true;
+	 		$scope.vm.errorMessage = "This application is still in development - stay tuned!";
+
+	 	};
+
 	 	$scope.register = function () {
 	 		$scope.vm.dataLoading = true;
 	 		var ref = new Firebase("https://stockeleven.firebaseio.com/");
