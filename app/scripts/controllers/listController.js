@@ -55,21 +55,23 @@
     }
 
     refLists.limitToLast(15).once("value", function(snapshot) {
-      var snapshotLists = snapshot.val();
       var lists = [];
-      for (var prop in snapshotLists) {
-        var date = new Date(snapshotLists[prop].timestamp);
+      var i = 0;
+      snapshot.forEach(function(childSnapshot) {
+        i++;
         lists.push({
-          pushId: prop,
-          timestamp : snapshotLists[prop].timestamp,
-          date: date.toDateString()
+          pushId: childSnapshot.key(),
+          timestamp : childSnapshot.child('timestamp').val(),
+          date: new Date(childSnapshot.child('timestamp').val()).toDateString()
         });
-      }
-      lists.sort(function(a, b) {
-        return parseFloat(b.timestamp) - parseFloat(a.timestamp);
-      });
-      $scope.$apply(function() {
-        $scope.lists = lists;
+        if (i ===  snapshot.numChildren()) {
+          lists.sort(function(a, b) {
+            return parseFloat(b.timestamp) - parseFloat(a.timestamp);
+          });
+          $scope.$apply(function() {
+            $scope.lists = lists;
+          });
+        }
       });
     }, function (errorObject) {
       console.log("The read of list of lists failed: " + errorObject.code);
