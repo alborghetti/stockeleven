@@ -8,23 +8,18 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 50px;
   margin-bottom: 60px;
 }
 
 .jumbotron {
-    background-image: url(../images/lamp.jpg);
+    background-image: url(../images/cat.png);
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
     text-shadow: black 0.3em 0.3em 0.3em;
-}
 
-.navbar {
-    -webkit-box-shadow: 0 8px 6px -6px #999;
-    -moz-box-shadow: 0 8px 6px -6px #999;
-    box-shadow: 0 8px 6px -6px #999;
 }
 
 @media (min-width: 768px) {
@@ -82,44 +77,53 @@ body {
 }
 
  /* List styles */
-.list-market-box-1 {
-  min-height: 150px;
-  border-width: 3px;
-  border-color: #337ab7;
-  background-color: #b8b7b5;
-}
-
-.list-market-box-2 {
-  min-height: 320px;
-  border-width: 3px;
-  border-color: #337ab7;
-  background-color: #b8b7b5;
-}
+ .list-section {
+  background-image: url(../images/night.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+ }
 
 .list-box {
   min-height: 193.328px;
-  border-width: 3px;
-  border-color: #337ab7;
+  min-width: 193.328px;
+  border-radius: 0px ;
+  cursor: pointer;
 }
 
 .list-box-disabled {
   min-height: 193.328px;
-  border-width: 3px;
-  border-color: #b8b7b5;
+  min-width: 193.328px;
+  border-radius: 0px ;
+  cursor: pointer;
+
 }
 
 .list-box:hover,
 .list-box:focus,
 .list-box:active {
+ padding: 14px;
+ text-decoration: none;
+}
+
+.link-text {
+  position: absolute;
+  left: 35px;
+  top: 15px;
+  right: 15px;
+}
+
+.list-box:hover .link-text,
+.list-box:focus .link-text,
+.list-box:active .link-text {
   padding: 14px;
-  border-width: 6px;
-  border-color: #337ab7;
-  text-decoration: none;
+  font-size: 180%;
+  color: #337ab7;
 }
 
 .list-button {
   position: absolute;
-  right: 35px;
+  right: 15px;
   bottom: 35px;
 }
 
