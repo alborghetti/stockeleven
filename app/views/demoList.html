@@ -1,5 +1,5 @@
 <div class="section-main">
-<div class="container-fluid">
+<div class="container-fluid" >
 	<br>
 	<div class="row">
 		<div class="col-sm-12">
@@ -8,7 +8,8 @@
 					<h2>{{listText}}</h2>
 					<p>List generated on {{listDate}}</p>
 				</div>
-					<table class="table">
+				<div class="table-responsive" stockeleven-table-scroll>
+					<table class="table-condensed">
 						<thead >
 							<tr>
 								<th class="td-150">Stock</th>
@@ -20,9 +21,9 @@
 							</tr>
 						</thead>
 					</table>
-
-					<div class="div-table-content">
-						<table class="table">
+				</div>
+					<div class="table-responsive div-table-content" stockeleven-table-scroll>
+						<table class="table-condensed">
 							<tbody>
 								<tr ng-repeat="stock in stocks | filter:query | orderBy:orderProp">
 									<td class="td-150">{{stock.titoloTicker}}</td>
@@ -35,7 +36,7 @@
 							</tbody>
 						</table>
 					</div>
-
+				</div>
 			</div>
 		</div>
 	</div>
