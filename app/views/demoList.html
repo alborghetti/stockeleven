@@ -1,42 +1,38 @@
-<div class="section-main">
-<div class="container-fluid" >
-	<br>
-	<div class="row">
-		<div class="col-sm-12">
-			<div class="panel panel-table">
-				<div class="panel-heading">
-					<h2>{{listText}}</h2>
-					<p>List generated on {{listDate}}</p>
-				</div>
-				<div class="table-responsive" stockeleven-table-scroll>
-					<table class="table-condensed">
-						<thead >
-							<tr>
-								<th class="td-150">Stock</th>
-								<th class="td-60">Last Price</th>
-								<th class="td-60">Daily variation %</th>
-								<th class="td-60">PE</th>
-								<th class="td-60">EPS</th>
-								<th class="td-60">High 52</th>
-							</tr>
-						</thead>
-					</table>
-				</div>
-					<div ng-if="dataLoading" class="col-md-2 col-md-offset-5">
-						<br>
-						<img  src="images/ajax-loader.gif" />
-						<br>
+<br>
+<div ng-if="dataLoading" class="col-md-2 col-md-offset-5" style="height: 100vh">
+			<br>
+			<img  src="images/ajax-loader.gif" />
+			<br>
+		</div>
+<div class="section-main" ng-if="!dataLoading">
+	<div class="container-fluid" >
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="panel panel-table">
+					<div class="panel-heading">
+						<h2>{{listText}}</h2>
+						<p>List generated on {{listDate}}</p>
 					</div>
-					<div class="table-responsive div-table-content" stockeleven-table-scroll>
-						<table class="table-condensed">
+					<div class="table-responsive">
+						<table class="table">
+							<thead >
+								<tr>
+									<th class="td-overflow">Stock</th>
+									<th>Last Price</th>
+									<th>Daily variation %</th>
+									<th>PE</th>
+									<th>EPS</th>
+									<th>High 52</th>
+								</tr>
+							</thead>					
 							<tbody>
 								<tr ng-repeat="stock in stocks | filter:query | orderBy:orderProp">
-									<td class="td-150">{{stock.titoloTicker}}</td>
-									<td class="td-60">{{stock.lastPrice}}</td>
-									<td class="td-60">{{stock.dailyVariationP}}</td>
-									<td class="td-60">{{stock.pe}}</td>
-									<td class="td-60">{{stock.eps}}</td>
-									<td class="td-60">{{stock.high52}}</td>
+									<td class="td-overflow">{{stock.titoloTicker}}</td>
+									<td>{{stock.lastPrice}}</td>
+									<td>{{stock.dailyVariationP}}</td>
+									<td>{{stock.pe}}</td>
+									<td>{{stock.eps}}</td>
+									<td>{{stock.high52}}</td>
 								</tr>
 							</tbody>
 						</table>
@@ -45,5 +41,4 @@
 			</div>
 		</div>
 	</div>
-</div>
 </div>

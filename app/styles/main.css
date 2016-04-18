@@ -181,21 +181,45 @@ body {
   border-radius: 0 !important;
 }
 
-.div-table-content {
-  height: 100vh;
-  overflow-y:auto;
+
+/* Tables */
+table {
+  width: 100%;
+  min-width: 600px;
 }
 
-.td-150 {
-    overflow: hidden;
-    width: 60empx;
-    min-width: 20em;
-    text-align: left;
+thead, tbody, tr, td, th { 
+  display: block; 
+  
+}
+td, th {
+  overflow-x: hidden;
+  text-align: center;
 }
 
-.td-60 {
-    overflow: hidden;
-    width: 15em;
-    min-width: 5em;
-    text-align: right;
+tr:after {
+  content: ' ';
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+thead th {
+  height: 50px;
+}
+
+tbody {
+  height: 350px;
+  overflow-y: auto;
+}
+
+
+tbody td, thead th {
+  width: 16.6%;
+  float: left;
+}
+
+.td-overflow {
+  overflow: auto !important;
+  text-align: left !important;
 }
