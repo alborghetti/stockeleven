@@ -25,7 +25,7 @@ body {
 }
 
 .jumbotron {
-  background-image: url(../images/cat.png);
+  background-image: url(../images/lamp.jpg);
   background-position: 0% 25%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -91,7 +91,7 @@ body {
 
 /* List styles */
 .list-section {
-  background: url(../images/night.jpg) no-repeat center center fixed;
+  background: url(../images/harmony.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -132,7 +132,7 @@ body {
 .list-box-disabled:hover,
 .list-box-disabled:focus,
 .list-box-disabled:active {
- background-color:  #cce6ff;
+ background-color:  #b4ac98;
 }
 
 
@@ -182,7 +182,7 @@ body {
 }
 
 .div-table-content {
-  height: 320px;
+  height: 100vh;
   overflow-y:auto;
 }
 

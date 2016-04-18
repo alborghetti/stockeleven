@@ -24,7 +24,8 @@
         console.log("The read of list description failed: " + errorObject.code);
       });
 
-
+    $scope.dataLoading = true;
+    $scope.dataLoadingdd = true;
 
     if ($routeParams.date === "current") {
       refLists.limitToLast(1).once("value", function(snapshot) {
@@ -32,12 +33,16 @@
         for (var prop in lastList) {
           var date = new Date(lastList[prop].timestamp);
           $scope.$apply(function() {
-            $scope.stocks = lastList[prop].stocks.slice(0,29);
+            $scope.dataLoading = false;
+            $scope.stocks = lastList[prop].stocks.slice(0,30);
             $scope.orderProp = 'finalRank';
             $scope.listDate = date.toDateString();
           });
         }
       }, function (errorObject) {
+        $scope.$apply(function() {
+          $scope.dataLoading = false;
+        });
         console.log("The read of stocks list failed: " + errorObject.code);
       });
     } else {
@@ -45,11 +50,15 @@
         var list = snapshot.val();
         var date = new Date(list.timestamp);
         $scope.$apply(function() {
+          $scope.dataLoading = false;
           $scope.stocks = list.stocks.slice(0,29);
           $scope.orderProp = 'finalRank';
           $scope.listDate = date.toDateString();
         });
       }, function (errorObject) {
+        $scope.$apply(function() {
+          $scope.dataLoading = false;
+        });
         console.log("The read of stocks list failed: " + errorObject.code);
       });
     }
@@ -69,11 +78,15 @@
             return parseFloat(b.timestamp) - parseFloat(a.timestamp);
           });
           $scope.$apply(function() {
+            $scope.dataLoadingdd = false;
             $scope.lists = lists;
           });
         }
       });
     }, function (errorObject) {
+      $scope.$apply(function() {
+          $scope.dataLoadingdd = false;
+        });
       console.log("The read of list of lists failed: " + errorObject.code);
     });
   });

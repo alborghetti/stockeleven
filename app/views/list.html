@@ -1,5 +1,5 @@
 	<div class="section-main-list container-fluid ">
-	<br>
+		<br>
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="panel table-panel">
@@ -14,6 +14,9 @@
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								<li ng-if="dataLoadingdd">Loading...
+									<img  src="images/ajax-loader2.gif" align="middle"/>
+								</li>
 								<li ng-repeat="list in lists">
 									<a href="#/list/{{listId}}/{{list.pushId}}">{{list.date}}</a>
 								</li>
@@ -21,18 +24,23 @@
 						</div>
 					</div>
 					<div class="table-responsive" stockeleven-table-scroll>
-					<table class="table-condensed">
-						<thead >
-							<tr>
-								<th class="td-150">Stock</th>
-								<th class="td-60">Last Price</th>
-								<th class="td-60">Daily variation %</th>
-								<th class="td-60">PE</th>
-								<th class="td-60">EPS</th>
-								<th class="td-60">High 52</th>
-							</tr>
-						</thead>
-					</table>
+						<table class="table-condensed">
+							<thead >
+								<tr>
+									<th class="td-150">Stock</th>
+									<th class="td-60">Last Price</th>
+									<th class="td-60">Daily variation %</th>
+									<th class="td-60">PE</th>
+									<th class="td-60">EPS</th>
+									<th class="td-60">High 52</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+					<div ng-if="dataLoading" class="col-md-2 col-md-offset-5">
+						<br>
+						<img  src="images/ajax-loader.gif" />
+						<br>
 					</div>
 					<div class="table-responsive div-table-content" stockeleven-table-scroll>
 						<table class="table table-hover table-condensed">
