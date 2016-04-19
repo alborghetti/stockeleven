@@ -1,11 +1,10 @@
-<br>
-<div ng-if="dataLoading" class="col-md-2 col-md-offset-5" style="height: 100vh">
-			<br>
-			<img  src="images/ajax-loader.gif" />
-			<br>
-		</div>
-<div class="section-main" ng-if="!dataLoading">
-	<div class="container-fluid" >
+<div class="section-main-list" >
+<div ng-if="dataLoading" class="loading">
+	<br>
+	<img  src="images/hourglass.svg" />
+	<br>
+</div>
+	<div class="container-fluid" ng-if="!dataLoading">
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="panel panel-table">
@@ -24,7 +23,7 @@
 									<th>EPS</th>
 									<th>High 52</th>
 								</tr>
-							</thead>					
+							</thead>
 							<tbody>
 								<tr ng-repeat="stock in stocks | filter:query | orderBy:orderProp">
 									<td class="td-overflow">{{stock.titoloTicker}}</td>

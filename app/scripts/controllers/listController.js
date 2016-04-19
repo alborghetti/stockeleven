@@ -51,7 +51,7 @@
         var date = new Date(list.timestamp);
         $scope.$apply(function() {
           $scope.dataLoading = false;
-          $scope.stocks = list.stocks.slice(0,29);
+          $scope.stocks = list.stocks.slice(0,30);
           $scope.orderProp = 'finalRank';
           $scope.listDate = date.toDateString();
         });

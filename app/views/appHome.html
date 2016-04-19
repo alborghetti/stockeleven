@@ -1,76 +1,35 @@
 <div class="list-section section-main">
-	<div class="container-fluid" >
+<div ng-if="dataLoading" class="loading">
 	<br>
-		<br>
-		<br>
+	<img  src="images/hourglass.svg" />
+	<br>
+</div>
+	<div class="container-fluid" ng-if="!dataLoading">
+		<biv class="row">
 		<div class="row">
-			<div class="col-md-2">
+			<div class="col-md-2" ng-repeat="activeList in activeLists">
 				<div class="col-md-12">
-					<a  href="#/list/L02/current">
+					<a  href="#/list/{{activeList.listId}}/current">
 						<span class="thumbnail list-box">
-							<h4  class="link-text">Nasdaq</h4>
-							<h3 class="link-text-hidden">Display</h3>
-						</span>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-2">
-				<div class="col-md-12">
-					<a  href="#/list/L01/current">
-						<span class="thumbnail list-box">
-							<h4  class="link-text">FTSE Italia All-Shares</h4>
-							<h3 class="link-text-hidden">Display</h3>
-						</span>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-2">
-				<div class="col-md-12">
-					<a  href="#/list/L03/current">
-						<span class="thumbnail list-box">
-							<h4  class="link-text">NY Stock Exchange</h4>
-							<h3 class="link-text-hidden">Display</h3>
-						</span>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-2">
-				<div class="col-md-12">
-					<a  href="#/list/L04/current">
-						<span class="thumbnail list-box">
-							<h4  class="link-text">Euronext CAC40</h4>
+							<h4  class="link-text">{{activeList.description}}</h4>
 							<h3 class="link-text-hidden">Display</h3>
 						</span>
 					</a>
 				</div>
 			</div>
 		</div>
-
 		<div class="row">
-			<div class="col-md-2">
+			<div class="col-md-2" ng-repeat="inactiveList in inactiveLists">
 				<div class="col-md-12">
-				<a href="">
+					<a href="#/activation/{{inactiveList.listId}}">
 						<span class="thumbnail list-box-disabled">
-         						<h4 class="link-text">Frankfurt DAX</h4>
-         						<h3 class="link-text-hidden">Activate</h3>
-						</span>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-2">
-				<div class="col-md-12">
-					<a href="">
-						<span class="thumbnail list-box-disabled">
-         						<h4 class="link-text">FTSE London All-Shares</h4>
-         						<h3 class="link-text-hidden">Activate</h3>
+							<h4 class="link-text">{{inactiveList.description}}</h4>
+							<h3 class="link-text-hidden">Activate</h3>
 						</span>
 					</a>
 				</div>
 			</div>
 		</div>
-		<br>
-		<br>
-		<br>
 	</div>
-	</div>
+</div>
 
