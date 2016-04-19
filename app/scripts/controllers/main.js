@@ -8,7 +8,11 @@
  * Controller of the stockElevenApp
  */
 angular.module('stockElevenApp')
-  .controller('MainCtrl', function ($scope, $window, $firebaseAuth) {
+  .controller('MainCtrl', function ($scope, $window, $firebaseAuth, $location) {
+
+  	$scope.isActive = function(route) {
+        return route === $location.path();
+      }
 
 	var ref = new Firebase("https://stockeleven.firebaseio.com/");
 	ref.onAuth(function(authData) {

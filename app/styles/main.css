@@ -11,6 +11,8 @@ body {
 .section-main {
   background-color: #fff;
   box-shadow: 0px 10px 5px #255 !important;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .section-main-list {
@@ -98,9 +100,23 @@ body {
   border-top-right-radius: 0;
 }
 
-/* List styles */
+/* List and portfolios styles */
 .list-section {
   background: url(../images/harmony.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.portfolio-section {
+  background: url(../images/night.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.user-portfolio-section {
+  background: url(../images/marble.jpg) no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   overflow-y: auto;
@@ -112,22 +128,30 @@ body {
   border-radius: 0px ;
   cursor: pointer;
   box-shadow: 10px 10px 5px #222;
+  border-style: none !important;
 }
 
 .list-box-disabled {
   min-height: 193.328px;
   min-width: 193.328px;
   border-radius: 0px ;
-  background-color: #e0e0e0;
+  background-color: #afafaf;
   box-shadow: 10px 10px 5px #222;
+  border-style: none !important;
 }
 
 .link-text {
   position: absolute;
-  left: 35px;
-  top: 15px;
-  right: 15px;
+  left: 40px;
+  top: 40px;
 }
+
+.link-text-l2 {
+  position: absolute;
+  left: 40px;
+  top: 15px;
+}
+
 
 .link-text-hidden {
   position: absolute;
@@ -146,6 +170,14 @@ body {
  background-color:  #b4ac98;
 }
 
+.list-box:hover .link-text-l2,
+.list-box:focus .link-text-l2,
+.list-box:active .link-text-l2,
+.list-box-disabled:hover .link-text-l2,
+.list-box-disabled:focus .link-text-l2,
+.list-box-disabled:active .link-text-l2 {
+ display: none;
+}
 
 .list-box:hover .link-text,
 .list-box:focus .link-text,

@@ -31,24 +31,29 @@
                 </button>
                 <a class="navbar-brand" href="#/"><img src="images/stockeleven_logo_new.svg" class="logo" ></a>
             </div>
-            <div class="collapse navbar-collapse navbar-ex1-collapse" id="myNavbar">
-                <div ng-controller="MainCtrl" ng-show="!isLoggedIn" class="ng-hide">
+            <div class="collapse navbar-collapse " id="myNavbar">
+                <div ng-controller="MainCtrl" ng-show="!isLoggedIn || false" class="ng-hide">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                         <li><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     </ul>
                 </div>
-                <div ng-controller="MainCtrl" ng-show="isLoggedIn" class="ng-hide">
+                <div ng-controller="MainCtrl" ng-show="isLoggedIn || false" class="ng-hide">
                     <ul class="nav navbar-nav navbar-right">
+                        <li ng-class="{active:isActive('/app')}">
+                            <a href="#/app">Stock Eleven Lists</a>
+                        </li>
+                        <li ng-class="{active:isActive('/portfoliosStockEleven')}">
+                            <a href="#/portfoliosStockEleven">Stock Eleven Portfolios</a>
+                        </li>
+                        <li ng-class="{active:isActive('/myPortfolios')}">
+                            <a href="#/myPortfolios">My Portfolios</a>
+                        </li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 <span class="glyphicon glyphicon-user"></span> {{userName}} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="#/app">Stock Eleven Lists</a></li>
-                                <li><a href="#/">Stock Eleven Portfolios</a></li>
-                                <li><a href="#/">My Portfolios</a></li>
-                                <li role="separator" class="divider"></li>
                                 <li><a href="#/">User settings</a></li>
                                 <li><a href="#/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                             </ul>
@@ -100,6 +105,8 @@
     <script src="scripts/controllers/registerController.js"></script>
     <script src="scripts/controllers/passwordRecoveryController.js"></script>
     <script src="scripts/controllers/appHomeController.js"></script>
+    <script src="scripts/controllers/appPortfoliosStockElevenController.js"></script>
+    <script src="scripts/controllers/appMyPortfoliosController.js"></script>
     <!-- endbuild -->
 </body>
 

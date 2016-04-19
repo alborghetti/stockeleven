@@ -41,9 +41,11 @@
             });
           }, function (errorObject) {
             //TODO error maintenance
+            $scope.dataLoading = false;
             console.log("The read failed: " + errorObject.code);
           });
         } else {
+          $scope.dataLoading = false;
           $scope.isLoggedIn = false;
         }
       });

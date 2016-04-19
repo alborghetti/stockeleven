@@ -5,13 +5,13 @@
 	<br>
 </div>
 	<div class="container-fluid" ng-if="!dataLoading">
-		<biv class="row">
+	<br />
 		<div class="row">
 			<div class="col-md-2" ng-repeat="activeList in activeLists">
 				<div class="col-md-12">
 					<a  href="#/list/{{activeList.listId}}/current">
 						<span class="thumbnail list-box">
-							<h4  class="link-text">{{activeList.description}}</h4>
+							<h3  class="link-text">{{activeList.description}}</h3>
 							<h3 class="link-text-hidden">Display</h3>
 						</span>
 					</a>
@@ -23,13 +23,14 @@
 				<div class="col-md-12">
 					<a href="#/activation/{{inactiveList.listId}}">
 						<span class="thumbnail list-box-disabled">
-							<h4 class="link-text">{{inactiveList.description}}</h4>
+							<h3 class="link-text">{{inactiveList.description}}</h3>
 							<h3 class="link-text-hidden">Activate</h3>
 						</span>
 					</a>
 				</div>
 			</div>
 		</div>
+		<br />
 	</div>
 </div>
 

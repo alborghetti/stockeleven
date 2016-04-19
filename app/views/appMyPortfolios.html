@@ -1,0 +1,25 @@
+<div class="user-portfolio-section section-main">
+<div ng-if="dataLoading" class="loading">
+	<br>
+	<img  src="images/hourglass.svg" />
+	<br>
+</div>
+	<div class="container-fluid" ng-if="!dataLoading">
+		<br />
+		<div class="row">
+			<div class="col-md-2" ng-repeat="portfolio in portfolios">
+				<div class="col-md-12">
+					<a  href="#/list/{{portfolio.portfolioId}}/current">
+						<span class="thumbnail list-box">
+							<h3 class="link-text">{{portfolio.description}}</h3>
+							<h4 class="link-text-l2">{{portfolio.market}}</h4>
+							<h3 class="link-text-hidden">Display</h3>
+						</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<br />
+	</div>
+</div>
+

@@ -60,6 +60,16 @@ angular
         controller: 'AppHomeCtrl',
         controllerAs: 'appHome'
       })
+      .when('/portfoliosStockEleven', {
+        templateUrl: 'views/appPortfoliosStockEleven.html',
+        controller: 'AppPortfoliosStockElevenCtrl',
+        controllerAs: 'appPortfoliosStockEleven'
+      })
+      .when('/myPortfolios', {
+        templateUrl: 'views/appMyPortfolios.html',
+        controller: 'AppMyPortfoliosCtrl',
+        controllerAs: 'appMyPortfolios'
+      })
       .otherwise({
         controller : function(){
             window.location.replace('/404.html');
