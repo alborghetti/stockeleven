@@ -1,0 +1,45 @@
+<div class="section-main-list" >
+<div ng-if="dataLoading" class="loading">
+	<br>
+	<img  src="images/hourglass.svg" />
+	<br>
+</div>
+	<div class="container-fluid" ng-if="!dataLoading">
+		<div class="row"  >
+			<div class="col-sm-12">
+				<div class="panel table-panel">
+					<div class="panel-heading">
+						<h2>{{portfolioDescription}} for list {{listDescription}}</h2>
+						<h3>Market value: {{marketValue}} - Portfolio value: {{portfolioValue}} - Difference: {{difference}}</h3>
+						<p>Analysis date: {{date}}</p>
+					</div>
+					<div class="table-responsive">
+						<table class="table table-hover">
+							<thead >
+								<tr>
+									<th class="td-overflow">Stock</th>
+									<th>Last Price</th>
+									<th>Purchase price</th>
+									<th>Delta price</th>
+									<th>Purchase value</th>
+									<th>Current value</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="stock in stocks | filter:query | orderBy:orderProp">
+									<td class="td-overflow">{{stock.company}} {{stock.stock}}</td>
+									<td>{{stock.lastPrice}}</td>
+									<td>{{stock.purchasePrice}}</td>
+									<td>{{stock.deltaP}}</td>
+									<td>{{stock.purchaseValue}}</td>
+									<td>{{stock.currentValue}}</td>
+								</tr>
+							</tbody>
+						</table>
+						<br/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -10,7 +10,7 @@
    angular.module('stockElevenApp')
    .controller('ListCtrl', function ($scope, $routeParams) {
 
-    var refDescription = new Firebase("https://stockeleven.firebaseio.com/"+$routeParams.listId+"/description");
+    var refDescription = new Firebase("https://stockeleven.firebaseio.com/lists/"+$routeParams.listId+"/description");
     var refLists = new Firebase("https://stockeleven.firebaseio.com/"+$routeParams.listId+"/lists");
     var refSelectedList = new Firebase("https://stockeleven.firebaseio.com/"+$routeParams.listId+"/lists/"+$routeParams.date);
 

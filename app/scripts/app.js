@@ -65,6 +65,11 @@ angular
         controller: 'AppPortfoliosStockElevenCtrl',
         controllerAs: 'appPortfoliosStockEleven'
       })
+      .when('/portfoliosStockEleven/:portfolioId', {
+        templateUrl: 'views/portfolioStockEleven.html',
+        controller: 'portfolioStockElevenCtrl',
+        controllerAs: 'portfolioStockEleven'
+      })
       .when('/myPortfolios', {
         templateUrl: 'views/appMyPortfolios.html',
         controller: 'AppMyPortfoliosCtrl',

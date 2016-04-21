@@ -19,31 +19,46 @@ angular.module('stockElevenApp')
     ref.onAuth(function (authData) {
       if (authData) {
         $scope.isLoggedIn = true;
-        ref.child('users/' + authData.uid + '/lists').once("value", function (snapshot) {
-          //Add lists
-          snapshot.forEach(function (childSnapshot) {
-            ref.child(childSnapshot.key() + '/description').once("value", function (descSnapshot) {
+        //Get all defined lists
+        ref.child('/lists').once("value", function (snapshot) {
+          var lists = snapshot.val();
+
+          //Get all user authorized lists
+          ref.child('usersAuthorizations/' + authData.uid + '/lists').once("value", function (userSnapshot) {
+            var userLists = userSnapshot.val();
+            
+            //Move lists to the scope
+            for (var listId in lists) {
               var obj = {
-                listId: childSnapshot.key(),
-                description: descSnapshot.val()
+                listId: listId,
+                description: lists[listId].description
               };
-              if (childSnapshot.val() === true) {
+              //Check if list require authorization or if it is free
+              if (lists[listId].requireActivation) {
+                if (userLists[listId]) {
+                  $scope.$apply(function () {
+                    $scope.activeLists.push(obj);
+                    $scope.dataLoading = false;
+                  });
+                } else {
+                  $scope.$apply(function () {
+                    $scope.inactiveLists.push(obj);
+                    $scope.dataLoading = false;
+                  });
+                }
+              } else {
                 $scope.$apply(function () {
                   $scope.activeLists.push(obj);
                   $scope.dataLoading = false;
                 });
-              } else {
-                $scope.$apply(function () {
-                  $scope.inactiveLists.push(obj);
-                  $scope.dataLoading = false;
-                });
               }
-            }, function (errorObject) {
-              //TODO error maintenance
-              $scope.dataLoading = false;
-              console.log("The read failed: " + errorObject.code);
-            });
+            }
+          }, function (errorObject) {
+            //TODO error maintenance
+            $scope.dataLoading = false;
+            console.log("The read failed: " + errorObject.code);
           });
+
         }, function (errorObject) {
           //TODO error maintenance
           $scope.dataLoading = false;
