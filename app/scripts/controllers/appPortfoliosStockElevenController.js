@@ -18,7 +18,7 @@
       ref.onAuth(function(authData) {
         if (authData) {
           $scope.isLoggedIn = true;
-          ref.child('users/'+authData.uid+'/stockElevenPortfolios/active').once("value", function(snapshot) {
+          ref.child('usersAuthorizations/'+authData.uid+'/stockElevenPortfolios/active').once("value", function(snapshot) {
             if (snapshot.val() === true) {
               //TODO portfolios read
               var obj = {
@@ -27,13 +27,19 @@
                 market: "Nasdaq"
               };
               $scope.$apply(function () {
-                  $scope.portfolios.push(obj);
-                  $scope.dataLoading = false;
+                $scope.portfolios.push(obj);
+                $scope.dataLoading = false;
+              });
+            } else {
+              $scope.$apply(function () {
+                $scope.dataLoading = false;
               });
             }
           }, function (errorObject) {
             //TODO error maintenance
-            $scope.dataLoading = false;
+            $scope.$apply(function () {
+              $scope.dataLoading = false;
+            });
             console.log("The read failed: " + errorObject.code);
           });
         } else {
