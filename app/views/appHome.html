@@ -7,7 +7,7 @@
 	<div class="container-fluid" ng-if="!dataLoading">
 	<br />
 		<div class="row">
-			<div class="col-md-2" ng-repeat="activeList in activeLists">
+			<div class="col-md-3" ng-repeat="activeList in activeLists">
 				<div class="col-md-12">
 					<a  href="#/list/{{activeList.listId}}/current">
 						<span class="thumbnail list-box">
@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-2" ng-repeat="inactiveList in inactiveLists">
+			<div class="col-md-3" ng-repeat="inactiveList in inactiveLists">
 				<div class="col-md-12">
 					<a href="#/activation/{{inactiveList.listId}}">
 						<span class="thumbnail list-box-disabled">

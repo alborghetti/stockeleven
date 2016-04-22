@@ -10,7 +10,7 @@
 				<div class="panel table-panel">
 					<div class="panel-heading">
 						<h2>{{portfolioDescription}} for list {{listDescription}}</h2>
-						<h3>Market value: {{marketValue}} - Portfolio value: {{portfolioValue}} - Difference: {{difference}}</h3>
+						<h3>Portfolio value: {{portfolioValue}} - Market value: {{marketValue}} - Difference: {{difference}}</h3>
 						<p>Analysis date: {{date}}</p>
 					</div>
 					<div class="table-responsive">
@@ -27,7 +27,7 @@
 							</thead>
 							<tbody>
 								<tr ng-repeat="stock in stocks | filter:query | orderBy:orderProp">
-									<td class="td-overflow">{{stock.company}} {{stock.stock}}</td>
+									<td class="td-overflow">{{stock.company}}</td>
 									<td>{{stock.lastPrice}}</td>
 									<td>{{stock.purchasePrice}}</td>
 									<td>{{stock.deltaP}}</td>
