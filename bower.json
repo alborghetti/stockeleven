@@ -11,7 +11,8 @@
     "angular-sanitize": "^1.4.0",
     "angular-touch": "^1.4.0",
     "firebase": "^2.4.1",
-    "angularfire": "^1.1.4"
+    "angularfire": "^1.1.4",
+    "bootstrap-table": "^1.10.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

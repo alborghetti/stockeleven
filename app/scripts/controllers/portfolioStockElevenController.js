@@ -18,7 +18,7 @@ angular.module('stockElevenApp')
 
     ref.child($scope.portfolioId).once("value", function (snapshot) {
       var portfolio = snapshot.val();
-      var date = new Date(portfolio.timestamo);
+      var date = new Date(portfolio.timestamp);
       for (var prop in portfolio) {
         $scope.$apply(function () {
           $scope.dataLoading = false;
@@ -28,6 +28,22 @@ angular.module('stockElevenApp')
           $scope.marketValue = portfolio.marketValue.currentValue;
           $scope.portfolioValue = portfolio.value.currentValue;
           $scope.difference = portfolio.difference;
+          if ($scope.difference.substr(0,1) === '-') {
+            $scope.differenceArrow = 'glyphicon-chevron-down';
+            $scope.differenceLabel = 'label-danger';
+          } else {
+            $scope.differenceArrow = 'glyphicon-chevron-up';
+            $scope.differenceLabel = 'label-success';
+          }
+          for (var i=0; i<$scope.stocks.length; i++){
+            if ($scope.stocks[i].deltaP.substr(0,1) === '-') {
+              $scope.stocks[i].isPositive = false;
+              $scope.stocks[i].isNegative = true;
+            } else {
+              $scope.stocks[i].isPositive = true;
+              $scope.stocks[i].isNegative = false;
+            }
+          }
         });
       }
 

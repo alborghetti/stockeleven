@@ -30,8 +30,6 @@ angular.module('stockElevenApp')
             			$location.path('/app');
 				});
 			  }
-			}, {
-  				remember: "sessionOnly"
 			});
 	  	}
 

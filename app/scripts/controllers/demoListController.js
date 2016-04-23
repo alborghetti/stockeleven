@@ -31,6 +31,15 @@ angular.module('stockElevenApp')
         $scope.orderProp = 'finalRank';
         $scope.listDate = date.toDateString();
         $scope.dataLoading = false;
+        for (var i=0; i<$scope.stocks.length; i++){
+            if ($scope.stocks[i].dailyVariationP.substr(0,1) === '-') {
+              $scope.stocks[i].isPositive = false;
+              $scope.stocks[i].isNegative = true;
+            } else {
+              $scope.stocks[i].isPositive = true;
+              $scope.stocks[i].isNegative = false;
+            }
+          }
       });
     }, function (errorObject) {
       $scope.$apply(function () {

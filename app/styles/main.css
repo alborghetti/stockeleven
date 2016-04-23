@@ -228,53 +228,6 @@ body {
   margin-top: 20px;
 }
 
-.table-panel {
-  border-radius: 0 !important;
-}
-
-
-/* Tables */
-table {
-  width: 100%;
-  min-width: 600px;
-}
-
-thead, tbody, tr, td, th {
-  display: block;
-
-}
-td, th {
-  overflow-x: hidden;
-  text-align: center;
-}
-
-tr:after {
-  content: ' ';
-  display: block;
-  visibility: hidden;
-  clear: both;
-}
-
-thead th {
-  height: 50px;
-}
-
-tbody {
-  height: 350px;
-  overflow-y: auto;
-}
-
-
-tbody td, thead th {
-  width: 16.66%;
-  float: left;
-}
-
-.td-overflow {
-  overflow: auto !important;
-  text-align: left !important;
-}
-
 .loading {
     width: 100%;
     height: 100vh;

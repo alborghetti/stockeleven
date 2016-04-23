@@ -28,11 +28,11 @@
 							</ul>
 						</div>
 					</div>
-					<div class="table-responsive">
+						<div class="table-responsive">
 						<table class="table table-hover">
 							<thead >
 								<tr>
-									<th class="td-overflow">Stock</th>
+									<th>Stock</th>
 									<th>Last Price</th>
 									<th>Daily variation %</th>
 									<th>PE</th>
@@ -41,8 +41,9 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr ng-repeat="stock in stocks | filter:query | orderBy:orderProp">
-									<td class="td-overflow">{{stock.titoloTicker}}</td>
+								<tr ng-repeat="stock in stocks | filter:query | orderBy:orderProp"
+									ng-class="[{danger:stock.isNegative}, {success:stock.isPositive}]">
+									<td>{{stock.titoloTicker}}</td>
 									<td>{{stock.lastPrice}}</td>
 									<td>{{stock.dailyVariationP}}</td>
 									<td>{{stock.pe}}</td>

@@ -7,17 +7,21 @@
 	<div class="container-fluid" ng-if="!dataLoading">
 		<div class="row"  >
 			<div class="col-sm-12">
-				<div class="panel table-panel">
+				<div class="panel">
 					<div class="panel-heading">
 						<h2>{{portfolioDescription}} for list {{listDescription}}</h2>
-						<h3>Portfolio value: {{portfolioValue}} - Market value: {{marketValue}} - Difference: {{difference}}</h3>
 						<p>Analysis date: {{date}}</p>
+					</div>
+					<div class="panel-body">
+						<h4>Portfolio value: {{portfolioValue}} </h4>
+						<h4>Market value: {{marketValue}}</h4>
+						<h4>Difference: <span class="label {{differenceLabel}} ">{{difference}} <span class="glyphicon {{differenceArrow}}" aria-hidden="true"></span></span></h4>
 					</div>
 					<div class="table-responsive">
 						<table class="table table-hover">
 							<thead >
 								<tr>
-									<th class="td-overflow">Stock</th>
+									<th>Stock</th>
 									<th>Last Price</th>
 									<th>Purchase price</th>
 									<th>Delta price</th>
@@ -26,8 +30,9 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr ng-repeat="stock in stocks | filter:query | orderBy:orderProp">
-									<td class="td-overflow">{{stock.company}}</td>
+								<tr ng-repeat="stock in stocks | filter:query | orderBy:orderProp"  
+										ng-class="[{danger:stock.isNegative}, {success:stock.isPositive}]">
+									<td>{{stock.company}}</td>
 									<td>{{stock.lastPrice}}</td>
 									<td>{{stock.purchasePrice}}</td>
 									<td>{{stock.deltaP}}</td>
