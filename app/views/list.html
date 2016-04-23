@@ -28,32 +28,7 @@
 							</ul>
 						</div>
 					</div>
-						<div class="table-responsive">
-						<table class="table table-hover">
-							<thead >
-								<tr>
-									<th>Stock</th>
-									<th>Last Price</th>
-									<th>Daily variation %</th>
-									<th>PE</th>
-									<th>EPS</th>
-									<th>High 52</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr ng-repeat="stock in stocks | filter:query | orderBy:orderProp"
-									ng-class="[{danger:stock.isNegative}, {success:stock.isPositive}]">
-									<td>{{stock.titoloTicker}}</td>
-									<td>{{stock.lastPrice}}</td>
-									<td>{{stock.dailyVariationP}}</td>
-									<td>{{stock.pe}}</td>
-									<td>{{stock.eps}}</td>
-									<td>{{stock.high52}}</td>
-								</tr>
-							</tbody>
-						</table>
-						<br/>
-					</div>
+					<table data-options="tableOptions" stockeleven-bs-table-controller> </table>
 				</div>
 			</div>
 		</div>

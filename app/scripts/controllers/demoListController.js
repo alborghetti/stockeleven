@@ -11,14 +11,6 @@ angular.module('stockElevenApp')
   .controller('DemoListCtrl', function ($scope, $routeParams) {
 
     var ref = new Firebase("https://stockeleven.firebaseio.com/demoLists/" + $routeParams.listId);
-    var refDescription = new Firebase("https://stockeleven.firebaseio.com/lists/" + $routeParams.listId + "/description");
-    refDescription.once("value", function(snapshot) {
-      $scope.$apply(function() {
-          $scope.listText =  snapshot.val();
-        });
-      }, function (errorObject) {
-        console.log("The read of list description failed: " + errorObject.code);
-      });
 
     $scope.listId = $routeParams.listId;
     $scope.dataLoading = true;
@@ -28,18 +20,76 @@ angular.module('stockElevenApp')
       var date = new Date(List.timestamp);
       $scope.$apply(function () {
         $scope.stocks = List.stocks.slice(0, 30);
-        $scope.orderProp = 'finalRank';
         $scope.listDate = date.toDateString();
+        $scope.listText = List.description;
         $scope.dataLoading = false;
-        for (var i=0; i<$scope.stocks.length; i++){
-            if ($scope.stocks[i].dailyVariationP.substr(0,1) === '-') {
-              $scope.stocks[i].isPositive = false;
-              $scope.stocks[i].isNegative = true;
-            } else {
-              $scope.stocks[i].isPositive = true;
-              $scope.stocks[i].isNegative = false;
-            }
-          }
+        $scope.tableOptions = {
+            data:  $scope.stocks,
+            rowStyle: function (row, index) {
+                return { classes: 'none' };
+            },
+            cache: false,
+            height: 600,
+            striped: true,
+            pagination: true,
+            pageSize: 10,
+            pageList: [10, 20, 30],
+            search: true,
+            showColumns: true,
+            showRefresh: false,
+            minimumCountColumns: 2,
+            clickToSelect: true,
+            showToggle: true,
+            showExport: true,
+            maintainSelected: true,
+            rowStyle: function(row, index) {
+                        if (row.dailyVariationP.substr(0,1) === '-') {
+                          return {
+                            classes: 'danger'
+                            };
+                        }
+                        return {
+                          classes: 'success'
+                        };
+                      },
+            columns: [{
+                field: 'titoloTicker',
+                align: 'left',
+                title: 'Stock',
+                sortable: true,
+                valign: 'bottom'
+            }, {
+                field: 'lastPrice',
+                title: 'Last Price',
+                align: 'right',
+                valign: 'bottom',
+                sortable: true
+            }, {
+                field: 'dailyVariationP',
+                title: 'Daily variation %',
+                align: 'right',
+                valign: 'bottom',
+                sortable: true
+            }, {
+                field: 'pe',
+                title: 'PE',
+                align: 'right',
+                valign: 'bottom',
+                sortable: true
+            }, {
+                field: 'eps',
+                title: 'EPS',
+                align: 'right',
+                valign: 'bottom',
+                sortable: true
+            }, {
+                field: 'high52',
+                title: 'High 52',
+                align: 'right',
+                valign: 'bottom',
+                sortable: true
+            }]
+        };
       });
     }, function (errorObject) {
       $scope.$apply(function () {
@@ -47,5 +97,4 @@ angular.module('stockElevenApp')
       });
       console.log("The read failed: " + errorObject.code);
     });
-
   });

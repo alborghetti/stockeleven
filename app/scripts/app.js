@@ -83,30 +83,3 @@ angular
       });
 
   });
-
-  angular.module('stockElevenApp')
-  .directive('stockelevenBack', ['$window', function($window) {
-        return {
-            restrict: 'A',
-            link: function (scope, elem, attrs) {
-              elem.bind('click', function () {
-                  $window.history.back();
-              });
-            }
-        };
-    }]);
-
-  angular.module('stockElevenApp')
-  .directive('stockelevenTableScroll', function() {
-        return {
-            restrict: 'A',
-            link: function (scope, element, attrs) {
-
-              $(element).addClass( "binded_scroll" );
-
-              $(element).scroll(function(){
-              $( '.binded_scroll' ).scrollLeft($(this).scrollLeft());
-            });
-          }
-        };
-    });

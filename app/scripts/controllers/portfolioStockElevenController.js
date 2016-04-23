@@ -35,15 +35,75 @@ angular.module('stockElevenApp')
             $scope.differenceArrow = 'glyphicon-chevron-up';
             $scope.differenceLabel = 'label-success';
           }
-          for (var i=0; i<$scope.stocks.length; i++){
-            if ($scope.stocks[i].deltaP.substr(0,1) === '-') {
-              $scope.stocks[i].isPositive = false;
-              $scope.stocks[i].isNegative = true;
-            } else {
-              $scope.stocks[i].isPositive = true;
-              $scope.stocks[i].isNegative = false;
-            }
-          }
+          $scope.tableOptions = {
+            data:  $scope.stocks,
+            rowStyle: function (row, index) {
+                return { classes: 'none' };
+            },
+            cache: false,
+            height: 600,
+            striped: true,
+            pagination: true,
+            pageSize: 10,
+            pageList: [10, 20, 30],
+            search: true,
+            showColumns: true,
+            showRefresh: false,
+            minimumCountColumns: 2,
+            clickToSelect: true,
+            showToggle: true,
+            showExport: true,
+            maintainSelected: true,
+            sortName: 'purchaseValue',
+            sortOrder: 'desc',
+            rowStyle: function(row, index) {
+                        if (row.dailyVariationP.substr(0,1) === '-') {
+                          return {
+                            classes: 'danger'
+                            };
+                        }
+                        return {
+                          classes: 'success'
+                        };
+                      },
+            columns: [{
+                field: 'company',
+                align: 'left',
+                title: 'Stock',
+                sortable: true,
+                valign: 'bottom'
+            }, {
+                field: 'lastPrice',
+                title: 'Last Price',
+                align: 'right',
+                valign: 'bottom',
+                sortable: true
+            }, {
+                field: 'purchasePrice',
+                title: 'Purchase price',
+                align: 'right',
+                valign: 'bottom',
+                sortable: true
+            }, {
+                field: 'deltaP',
+                title: 'Delta price',
+                align: 'right',
+                valign: 'bottom',
+                sortable: true
+            }, {
+                field: 'purchaseValue',
+                title: 'Purchase value',
+                align: 'right',
+                valign: 'bottom',
+                sortable: true
+            }, {
+                field: 'currentValue',
+                title: 'Current value',
+                align: 'right',
+                valign: 'bottom',
+                sortable: true
+            }]
+        };
         });
       }
 
