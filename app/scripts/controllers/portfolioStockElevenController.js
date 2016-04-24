@@ -41,7 +41,6 @@ angular.module('stockElevenApp')
                 return { classes: 'none' };
             },
             cache: false,
-            height: 600,
             striped: true,
             pagination: true,
             pageSize: 10,
@@ -57,7 +56,7 @@ angular.module('stockElevenApp')
             sortName: 'purchaseValue',
             sortOrder: 'desc',
             rowStyle: function(row, index) {
-                        if (row.dailyVariationP.substr(0,1) === '-') {
+                        if (row.deltaP.substr(0,1) === '-') {
                           return {
                             classes: 'danger'
                             };

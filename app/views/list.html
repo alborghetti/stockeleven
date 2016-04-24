@@ -1,18 +1,17 @@
 <div class="section-main-list" >
-<div ng-if="dataLoading" class="loading">
-	<br>
-	<img  src="images/hourglass.svg" />
-	<br>
-</div>
+	<div ng-if="dataLoading" class="loading">
+		<br>
+		<img  src="images/hourglass.svg" />
+		<br>
+	</div>
 	<div class="container-fluid" ng-if="!dataLoading">
+		<br />
 		<div class="row"  >
 			<div class="col-sm-12">
 				<div class="panel table-panel">
 					<div class="panel-heading">
 						<h2>{{listText}}</h2>
 						<p>List generated on {{listDate}}</p>
-					</div>
-					<div class="panel-body">
 						<div class="dropdown">
 							<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 								Previous Lists
@@ -32,5 +31,6 @@
 				</div>
 			</div>
 		</div>
+		<br />
 	</div>
 </div>

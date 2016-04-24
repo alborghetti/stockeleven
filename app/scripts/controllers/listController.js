@@ -38,7 +38,6 @@ angular.module('stockElevenApp')
                 return { classes: 'none' };
             },
             cache: false,
-            height: 500,
             striped: true,
             pagination: true,
             pageSize: 10,
@@ -118,7 +117,6 @@ angular.module('stockElevenApp')
                 return { classes: 'none' };
             },
             cache: false,
-            height: 600,
             striped: true,
             pagination: true,
             pageSize: 10,
