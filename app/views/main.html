@@ -1,5 +1,5 @@
 
-<div id="top" style="background-color: #07d6a7;" class="jumbotron text-center">
+<div style="background-color: #07d6a7;" class="jumbotron text-center" id="top">
   <div class="container-fluid">
     <h1>Stock Screener for building your investment portfolio</h1>
     <p><a class="btn btn-stockeleven btn-lg" href="#learn" du-smooth-scroll du-scrollspy role="button">Learn more &raquo;</a></p>
@@ -8,24 +8,24 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-8 col-sm-offset-1">
       <h2>About Stock Eleven</h2>
       <h4>We provide a stock screening dashboard for building your investment portfolios</h4>
       <p>Our rules are simple: buy cheap stocks with high value, but do it when the market push them.</p>
       <p>For doing this, we provide lists of more promising stocks and to prove it, we have build our portfolios and monitoring them on daily base. We have build Stock Eleven for us and made it available for everyone.</p>
     </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-signal logo slideanim"></span>
+    <div class="col-sm-3">
+      <span class="glyphicon glyphicon-stats logo slideanim"></span>
     </div>
   </div>
 </div>
 
 <div id="learn" class="container-fluid bg-grey">
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-3 col-sm-offset-1">
     <span class="glyphicon glyphicon-globe logo slideanim"></span>
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-8 ">
       <h2>How Stock Eleven works</h2>
       <h4><strong>MARKETS:</strong></h4> <p>We analyze some of most important markets:</p>
       <ul>
@@ -73,7 +73,7 @@
 
 <div class="container-fluid text-center bg-grey">
   <h2>DEMO LISTS</h2>
-  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide " data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -84,14 +84,14 @@
     <div class="carousel-inner" role="listbox">
       <div class="item active">
         <div class="row text-center">
-          <div class="col-sm-4 col-sm-offset-4" >
-            <div class="thumbnail">
+          <div class="col-sm-6 col-sm-offset-3" >
+            <div class="thumbnail bg-grey">
               <br />
               <p><a class="btn btn-stockeleven" href="#/demoList/L01" role="button">Display &raquo;</a></p>
               <img src="images/milano.jpg" alt="Milano" width="400" heigh="300">
               <p><strong>FTSE Italia list</strong></p>
-              <p>The FTSE Italia Series provides investors with a comprehensive and complementary set of market-cap weighted indices measuring the performance of Italian companies listed on markets of Borsa Italia.</p>
-              <p>More details: <a href="http://www.ftse.com/products/indices/italia" target="_blank"><strong> FTSE Italia</strong></a></p>
+              <p class="text-justify">The FTSE Italia Series provides investors with a comprehensive and complementary set of market-cap weighted indices measuring the performance of Italian companies listed on markets of Borsa Italia.</p>
+              <p class="text-justify">More details: <a href="http://www.ftse.com/products/indices/italia" target="_blank"><strong> FTSE Italia</strong></a></p>
               <br />
             </div>
           </div>
@@ -99,14 +99,14 @@
       </div>
       <div class="item">
         <div class="row text-center">
-          <div class="col-sm-4 col-sm-offset-4" >
-            <div class="thumbnail">
+          <div class="col-sm-6 col-sm-offset-3" >
+            <div class="thumbnail bg-grey">
               <br />
               <p><a class="btn btn-stockeleven" href="#/demoList/L02" role="button">Display &raquo;</a></p>
               <img src="images/newyork.jpg" alt="New York" width="400" heigh="300">
               <p><strong>NASDAQ list</strong></p>
-              <p>NASDAQ is the second-largest exchange in the world by market capitalization, behind only the New York Stock Exchange. It includes the world’s foremost technology and biotech giants such as Apple, Google, Microsoft, Oracle, Amazon and Intel.</p>
-              <p> More details:<a href="http://www.nasdaq.com" target="_blank"><strong> NASDAQ</strong></a></p>
+              <p class="text-justify">NASDAQ is the second-largest exchange in the world by market capitalization, behind only the New York Stock Exchange. It includes the world’s foremost technology and biotech giants such as Apple, Google, Microsoft, Oracle, Amazon and Intel.</p>
+              <p class="text-justify"> More details:<a href="http://www.nasdaq.com" target="_blank"><strong> NASDAQ</strong></a></p>
               <br />
             </div>
           </div>
@@ -127,12 +127,13 @@
   </div>
 </div>
 
+<a href="#top" du-smooth-scroll du-scrollspy id="back-to-top" title="Back to top">
+<span class="glyphicon glyphicon-chevron-up" style="display: block !important;"></span>
+</a>
+
 
 <!-- Footer part -->
 <footer class="container-fluid text-center">
-  <a href="#top" du-smooth-scroll du-scrollspy title="To Top">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-  </a>
   <p>
     <a href="#/about" class="text-muted">About Us</a>
     <a href="#/contact" class="text-muted">Contact Us</a>
