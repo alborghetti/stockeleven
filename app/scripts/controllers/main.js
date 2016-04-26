@@ -25,7 +25,7 @@ angular.module('stockElevenApp')
 			ref = new Firebase("https://stockeleven.firebaseio.com/users/"+authData.uid);
 			ref.once("value", function(snapshot) {
       			var snapshotUser = snapshot.val();
-				
+
 				$scope.$apply(function() {
 					$scope.userName = snapshotUser.firstName + ' ' + snapshotUser.lastName;
 				});

@@ -22,6 +22,7 @@
             if (snapshot.val() === true) {
               //TODO portfolios read
               var obj = {
+                slide : 'slide-x-1',
                 portfolioId: "P01",
                 description: "Test portfolio",
                 market: "Nasdaq"

@@ -26,10 +26,15 @@ angular.module('stockElevenApp')
           //Get all user authorized lists
           ref.child('usersAuthorizations/' + authData.uid + '/lists').once("value", function (userSnapshot) {
             var userLists = userSnapshot.val();
-            
+
             //Move lists to the scope
+            var i = 0;
             for (var listId in lists) {
+              if (i < 3) {
+                i++;
+              }
               var obj = {
+                slide : 'slide-x-'+i,
                 listId: listId,
                 description: lists[listId].description
               };

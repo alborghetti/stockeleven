@@ -30,8 +30,13 @@ angular.module('stockElevenApp')
             ref.child('lists/').once("value", function (listsSnapshot) {
               var lists = listsSnapshot.val();
               //Move lists to the scope
+               var i = 0;
               for (var portfolioId in portfolios) {
+                if (i < 3) {
+                  i++;
+                }
                 var obj = {
+                  slide : 'slide-x-'+i,
                   portfolioId: portfolioId,
                   description: portfolios[portfolioId].description,
                   baseList: lists[portfolios[portfolioId].baseList].description

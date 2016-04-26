@@ -1,8 +1,16 @@
 
 <div ng-if="dataLoading" class="loading">
-	<br>
-	<img  src="images/hourglass.svg" />
-	<br>
+	<div class="sk-cube-grid">
+		<div class="sk-cube sk-cube1"></div>
+		<div class="sk-cube sk-cube2"></div>
+		<div class="sk-cube sk-cube3"></div>
+		<div class="sk-cube sk-cube4"></div>
+		<div class="sk-cube sk-cube5"></div>
+		<div class="sk-cube sk-cube6"></div>
+		<div class="sk-cube sk-cube7"></div>
+		<div class="sk-cube sk-cube8"></div>
+		<div class="sk-cube sk-cube9"></div>
+	</div>
 </div>
 <div class="container" ng-if="!dataLoading">
 	<br />
@@ -13,7 +21,7 @@
 					<h2>{{listText}}</h2>
 					<p>List generated on {{listDate}}</p>
 					<div class="dropdown">
-						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						<button class="btn btn-stockeleven dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 							Previous Lists
 							<span class="caret"></span>
 						</button>

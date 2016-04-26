@@ -1,4 +1,4 @@
-'use strict';
+
 
 /**
  * @ngdoc function
@@ -190,6 +190,10 @@ angular.module('stockElevenApp')
       var lists = [];
       var i = 0;
       var closeDataLoading = true;
+      lists.push({
+          pushId: 'current',
+          date: 'Current list'
+      });
       snapshot.forEach(function (childSnapshot) {
         closeDataLoading = false;
         i++;
@@ -209,10 +213,6 @@ angular.module('stockElevenApp')
         }
       });
       if (closeDataLoading) {
-        lists.push({
-          pushId: 'current',
-          date: 'No lists avaialable'
-        });
         $scope.$apply(function () {
             $scope.dataLoadingdd = false;
             $scope.lists = lists;
