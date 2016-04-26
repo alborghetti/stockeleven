@@ -1,10 +1,10 @@
-<div class="portfolio-section section-main">
+<div class="app-section jumbotron">
 <div ng-if="dataLoading" class="loading">
 	<br>
 	<img  src="images/hourglass.svg" />
 	<br>
 </div>
-	<div class="container-fluid" ng-if="!dataLoading">
+	<div class="container" ng-if="!dataLoading">
 		<br />
 		<div class="row">
 			<div class="col-md-3" ng-repeat="portfolio in portfolios">

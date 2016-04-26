@@ -6,60 +6,50 @@ body {
   padding-top: 50px;
   margin-bottom: 150px;
   z-index: 0;
-}
-
-.section-main {
-  background-color: #fff;
-  box-shadow: 0px 10px 5px #255 !important;
-  height: 100vh;
-  overflow-y: auto;
-}
-
-.section-main-list {
-  background-color: #fff;
-  width: 100%;
-  box-shadow: 0px 10px 5px #255 !important;
-  height: 100vh;
-  overflow-y: auto;
-  position: fixed;
-}
-
-.section-main-form {
-  background-color: #fff;
-  width: 100%;
+  font: 400 15px Lato, sans-serif;
+  line-height: 1.8;
 }
 
 .logo {
   width: 180px;
+  color: #f4511e;
+  font-size: 200px;
 }
 
+.logo-small {
+    color: #f4511e;
+    font-size: 50px;
+}
+
+.bg-grey {
+      background-color: #f6f6f6;
+  }
+
 .jumbotron {
-  background-image: url(../images/plane.jpg);
   background-position: 0% 25%;
   background-size: cover;
   background-repeat: no-repeat;
-  color: white;
-  text-shadow: black 0.3em 0.3em 0.3em;
-
+  font-family: Montserrat, sans-serif;
+  color: #fff;
+  
 }
 
-@media (min-width: 768px) {
-  .container-fluid {
-    width:100%
-  }
+.navbar {
+    font-family: Montserrat, sans-serif;
 }
 
-@media (min-width: 992px) {
-  .container-fluid {
-    width:100%
+.container-fluid {
+      padding: 60px 50px;
   }
+
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
 }
 
-@media (min-width: 1400px) {
-  .container,
-  .container-fluid {
-    width:1370px;
-  }
+.thumbnail img {
+    margin-bottom: 10px;
 }
 
 /* Forms styles */
@@ -99,24 +89,9 @@ body {
 }
 
 /* List and portfolios styles */
-.list-section {
-  background: url(../images/harmony.jpg) no-repeat center center fixed;
+.app-section {
+  background-color: #fff;
   background-size: cover;
-  height: 100vh;
-  overflow-y: auto;
-}
-
-.portfolio-section {
-  background: url(../images/night.jpg) no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
-  overflow-y: auto;
-}
-
-.user-portfolio-section {
-  background: url(../images/marble.jpg) no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
   overflow-y: auto;
 }
 
@@ -127,8 +102,9 @@ body {
   max-height: 245px;
   border-radius: 0px;
   cursor: pointer;
+  background-color: #f4511e;
   box-shadow: 10px 10px 5px #222;
-  border-style: none !important;
+  border-style: none;
 }
 
 .list-box-disabled {
@@ -137,20 +113,28 @@ body {
   max-width: 245px;
   max-height: 245px;
   border-radius: 0px ;
-  background-color: #afafaf;
+  background-color: #f6734a;
   box-shadow: 10px 10px 5px #222;
-  border-style: none !important;
+  border-style: none;
 }
 
 .link-text {
+  color: #fff;
   padding: 7px;
   position: static;
   left: 40px;
   top: 50px;
   right: 5px;
+  text-decoration: none !important;
 }
 
+a:hover {
+  text-decoration:none;
+}
+
+
 .link-text-l2 {
+  color: #fff;
   padding: 7px;
   position: static;
   left: 40px;
@@ -173,7 +157,8 @@ body {
 .list-box-disabled:hover,
 .list-box-disabled:focus,
 .list-box-disabled:active {
- background-color:  #b4ac98;
+ border: 5px solid #fbcabb;
+
 }
 
 .list-box:hover .link-text-l2,
@@ -200,42 +185,53 @@ body {
 .list-box-disabled:hover .link-text-hidden,
 .list-box-disabled:focus .link-text-hidden,
 .list-box-disabled:active .link-text-hidden {
- 
  text-decoration: none;
  display: block;
- color: ;
+ color: #fff;;
 }
 
 /* Footer */
-.footer {
-  top: auto;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  z-index: -1;
-  background-color: #888;
-  height: 150px;
+footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #888;
+    padding-top: 20px;
 }
 
 .container-fluid .text-muted {
   padding-right: 20px;
   padding-top: 20px;
-  color: #fff;
   margin-bottom: 20px;
   margin-top: 20px;
 }
 
 .loading {
     width: 100%;
-    height: 100vh;
-    background: rgba(0,0,0,0.7);
-    position: fixed;
-    top: 0px;
-    padding-top: 10%;
-    left: 0;
-    z-index: 1;
-    color: #fff;
+    height: 100%;
     text-align: center;
-    text-shadow: 0 0 13px #000
+}
+
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+}
+
+.carousel-indicators li {
+    border-color: #f4511e;
+}
+
+.carousel-indicators li.active {
+    background-color: #f4511e;
+}
+
+.item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+}
+
+.item span {
+    font-style: normal;
 }

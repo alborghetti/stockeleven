@@ -1,10 +1,10 @@
-<div class="list-section section-main">
+<div class="app-section jumbotron">
 <div ng-if="dataLoading" class="loading">
 	<br>
 	<img  src="images/hourglass.svg" />
 	<br>
 </div>
-	<div class="container-fluid" ng-if="!dataLoading">
+	<div class="container" ng-if="!dataLoading">
 	<br />
 		<div class="row">
 			<div class="col-md-3" ng-repeat="activeList in activeLists">
@@ -24,6 +24,7 @@
 					<a href="#/activation/{{inactiveList.listId}}">
 						<span class="thumbnail list-box-disabled">
 							<h3 class="link-text">{{inactiveList.description}}</h3>
+							<h4 class="link-text-l2">Inactive</h4>
 							<h3 class="link-text-hidden">Activate</h3>
 						</span>
 					</a>

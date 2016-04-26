@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'firebase'
+    'firebase',
+    'duScroll'
   ])
   .config(function ($routeProvider) {
     $routeProvider

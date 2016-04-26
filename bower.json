@@ -12,7 +12,8 @@
     "angular-touch": "^1.4.0",
     "firebase": "^2.4.1",
     "angularfire": "^1.1.4",
-    "bootstrap-table": "^1.10.1"
+    "bootstrap-table": "^1.10.1",
+    "angular-scroll": "^1.0.0"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

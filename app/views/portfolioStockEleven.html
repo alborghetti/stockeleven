@@ -1,27 +1,24 @@
-<div class="section-main-list" >
 <div ng-if="dataLoading" class="loading">
 	<br>
 	<img  src="images/hourglass.svg" />
 	<br>
-	</div>
-		<div class="container-fluid" ng-if="!dataLoading">
-			<br />
-			<div class="row"  >
-				<div class="col-sm-12">
-					<div class="panel">
-						<div class="panel-heading">
-							<h2>{{portfolioDescription}} for list {{listDescription}}</h2>
-							<p>Analysis date: {{date}}</p>
-							<h4>Portfolio value: {{portfolioValue}} </h4>
-							<h4>Market value: {{marketValue}}</h4>
-							<h4>Difference: <span class="label {{differenceLabel}} ">{{difference}} <span class="glyphicon {{differenceArrow}}" aria-hidden="true"></span></span></h4>
-						</div>
-						<table data-options="tableOptions" stockeleven-bs-table-controller> </table>
-						
-					</div>
+</div>
+<div class="container" ng-if="!dataLoading">
+	<br />
+	<div class="row"  >
+		<div class="col-sm-12">
+			<div class="panel">
+				<div class="panel-heading">
+					<h2>{{portfolioDescription}} for list {{listDescription}}</h2>
+					<p>Analysis date: {{date}}</p>
+					<h4>Portfolio value: {{portfolioValue}} </h4>
+					<h4>Market value: {{marketValue}}</h4>
+					<h4>Difference: <span class="label {{differenceLabel}} ">{{difference}} <span class="glyphicon {{differenceArrow}}" aria-hidden="true"></span></span></h4>
 				</div>
+				<table data-options="tableOptions" stockeleven-bs-table-controller> </table>
+				
 			</div>
-			<br />
 		</div>
 	</div>
+	<br />
 </div>

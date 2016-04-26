@@ -8,7 +8,11 @@
  * Controller of the stockElevenApp
  */
 angular.module('stockElevenApp')
-  .controller('MainCtrl', function ($scope, $window, $firebaseAuth, $location) {
+  .controller('MainCtrl', function ($scope, $window, $firebaseAuth, $location, $anchorScroll, $document) {
+
+  	$scope.slide = function (dir) {
+    	$('#myCarousel').carousel(dir);
+	};
 
   	$scope.isActive = function(route) {
         return route === $location.path();

@@ -22,8 +22,8 @@
     <!--[if lte IE 8]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
@@ -68,18 +68,6 @@
     <!-- Main part -->
     <div ng-view=""></div>
 
-    <!-- Footer part -->
-    <footer class="footer">
-        <div class="container-fluid">
-            <p class="text-muted">
-                <a class="text-muted" href="#/about" class="">About Us</a>
-                <a class="text-muted" href="#/contact" class="">Contact Us</a>
-                <a class="text-muted" href="#/conditions" class="">Terms &amp; Conditions</a>
-                <a class="text-muted" href="#/privacy" class="">Privacy Policy</a>
-            </p>
-        </div>
-    </footer>
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -94,6 +82,7 @@
     <script src="bower_components/firebase/firebase.js"></script>
     <script src="bower_components/angularfire/dist/angularfire.js"></script>
     <script src="bower_components/bootstrap-table/src/bootstrap-table.js"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -114,6 +103,7 @@
     <script src="scripts/directives/stockeleventablescroll.js"></script>
     <script src="scripts/directives/stockelevenback.js"></script>
     <!-- endbuild -->
+
 </body>
 
 </html>

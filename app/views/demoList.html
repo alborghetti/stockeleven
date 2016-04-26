@@ -1,22 +1,21 @@
-<div class="section-main-list" >
-	<div ng-if="dataLoading" class="loading">
-		<br>
-		<img  src="images/hourglass.svg" />
-		<br>
-	</div>
-	<div class="container-fluid" ng-if="!dataLoading">
-		<br />
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="panel">
-					<div class="panel-heading">
-						<h2>{{listText}}</h2>
-						<p>List generated on {{listDate}}</p>
-					</div>
-					<table data-options="tableOptions" stockeleven-bs-table-controller> </table>
+<div ng-if="dataLoading" class="loading">
+	<br>
+	<img  src="images/hourglass.svg" />
+	<br>
+</div>
+<div class="container" ng-if="!dataLoading">
+	<br />
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel">
+				<div class="panel-heading">
+					<h2>{{listText}}</h2>
+					<p>List generated on {{listDate}}</p>
 				</div>
+				<table data-options="tableOptions" stockeleven-bs-table-controller> </table>
 			</div>
 		</div>
-		<br />
 	</div>
+	<br />
 </div>
+
