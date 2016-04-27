@@ -27,6 +27,13 @@
                 description: "Test portfolio",
                 market: "Nasdaq"
               };
+              $scope.portfolios.push(obj);
+              var obj = {
+                slide : 'slide-x-2',
+                portfolioId: "P01",
+                description: "Test portfolio 2",
+                market: "NYSE"
+              };
               $scope.$apply(function () {
                   $scope.portfolios.push(obj);
                   $scope.dataLoading = false;
