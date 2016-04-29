@@ -8,7 +8,9 @@
  * Controller of the stockElevenApp
  */
 angular.module('stockElevenApp')
-  .controller('AppHomeCtrl', function ($scope) {
+  .controller('AppHomeCtrl', function ($scope, $rootScope) {
+
+    $rootScope.$emit('viewLoaded', {});
 
     $scope.isLoggedIn = false;
     $scope.activeLists = [];

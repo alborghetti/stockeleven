@@ -8,7 +8,9 @@
  * Controller of the stockElevenApp
  */
 angular.module('stockElevenApp')
-  .controller('AppPortfoliosStockElevenCtrl', function ($scope) {
+  .controller('AppPortfoliosStockElevenCtrl', function ($scope, $rootScope) {
+
+    $rootScope.$emit('viewLoaded', {});
 
     $scope.isLoggedIn = false;
     $scope.portfolios = [];

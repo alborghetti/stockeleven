@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'firebase',
-    'duScroll'
+    'duScroll',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -83,4 +84,5 @@ angular
         template : "<div></div>"
       });
 
-  });
+  })
+  .value('duScrollDuration', 2000);

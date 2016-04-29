@@ -7,7 +7,9 @@
  * Controller of password recovery page
  */
  angular.module('stockElevenApp')
- .controller('PasswordRecoveryCtrl', function ($scope, $firebaseAuth) {
+ .controller('PasswordRecoveryCtrl', function ($scope, $rootScope, $firebaseAuth) {
+
+ 	$rootScope.$emit('viewLoaded', {});
 
  	$scope.passwordRecovery = function () {
  		$scope.vm.dataLoading = true;

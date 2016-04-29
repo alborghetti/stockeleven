@@ -2,6 +2,11 @@
 * App styles
 *
 **/
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   padding-top: 50px;
   margin-bottom: 150px;
@@ -148,7 +153,7 @@ body {
   background-color: #fff;
   background-size: cover;
   overflow-y: auto;
-  border-collapse: 
+  border-collapse:
 }
 
 .list-box {
@@ -164,7 +169,7 @@ body {
   text-align: center;
   display: block;
   margin-left: 0;
-  margin-right: -0.625rem;  
+  margin-right: -0.625rem;
   padding-left: 0.625rem;
   padding-right: 0.625rem;
 }
@@ -182,7 +187,7 @@ body {
   float: left;
 }
 
-@media (max-width: 33.9em){  
+@media (max-width: 33.9em){
   .list-box {
       margin-left: -0.625rem;
   }
@@ -193,12 +198,12 @@ body {
 }
 
 .row [class^="col-"]:first-child>.list-box {
-    
+
     margin-left: -0.625rem;
 }
 
 .row [class^="col-"]:first-child>.list-box-disabled {
-    
+
     margin-left: -0.625rem;
 }
 
@@ -220,7 +225,7 @@ a:hover {
 
 .link-text-hidden {
   display: none;
-  
+
 }
 
 .list-box:hover,
@@ -267,8 +272,18 @@ a:hover {
 .container-fluid .text-muted {
   padding-right: 20px;
   padding-top: 20px;
-  margin-bottom: 20px;
-  margin-top: 20px;
+
+  color: #fff;
+}
+
+footer.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 150px;
+  background: #1abc9c;
+  overflow: hidden;
 }
 
 .loading {
@@ -378,6 +393,17 @@ a:hover {
     visibility: visible;
 }
 
+.slide-down {
+    /* The name of the animation */
+    animation-name: slide-down;
+    -webkit-animation-name: slide-down;
+    /* The duration of the animation */
+    animation-duration: 2s;
+    -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible;
+}
+
 @keyframes slide {
     0% {
         opacity: 0;
@@ -392,6 +418,27 @@ a:hover {
     0% {
         opacity: 0;
         -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+@-webkit-keyframes slide-dowm {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-70%);
     }
     100% {
         opacity: 1;
@@ -444,12 +491,13 @@ a:hover {
 
 #back-to-top {
     position: fixed;
-    bottom: 40px;
+    bottom: 0px;
     right: 40px;
     z-index: 9999;
     width: 50px;
-    height: 50px;
+    height: 90px;
     text-align: center;
+    line-height: 30px;
     background: #1abc9c;
     color: #fff;
     cursor: pointer;
@@ -458,16 +506,14 @@ a:hover {
     text-decoration: none;
     transition: opacity 0.5s ease-out;
     opacity: 0;
-    font-size: 40px;
-    padding-bottom: 8px;
-    padding-left: 3px;
-    display: block !important;
-
+    font-size: 30px;
+    outline-width: 0px;
 }
 #back-to-top:hover {
     background: transparent;
     color: #1abc9c;
 }
+
 #back-to-top.show {
     opacity: 1;
 }
@@ -482,7 +528,7 @@ a:hover {
   line-height: 1.33;
   border-radius: 25px;
   box-shadow: 5px 5px 5px #222;
-  border-spacing: 5px; 
+  border-spacing: 5px;
   border-color: #1abc9c;
 }
 
@@ -496,7 +542,7 @@ a:hover {
   line-height: 1.33;
   border-radius: 25px;
   box-shadow: 5px 5px 5px #222;
-  border-spacing: 5px; 
+  border-spacing: 5px;
   border-color: #e74c3c;
 }
 
@@ -509,4 +555,6 @@ a:hover {
   background: transparent;
   color: #e74c3c;
 }
+
+
 

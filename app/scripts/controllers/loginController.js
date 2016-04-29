@@ -7,7 +7,9 @@
  * Controller of login page
  */
 angular.module('stockElevenApp')
-  .controller('LoginCtrl', function ($scope, $firebaseAuth, $location) {
+  .controller('LoginCtrl', function ($scope, $rootScope, $firebaseAuth, $location) {
+
+  		$rootScope.$emit('viewLoaded', {});
 
   		$scope.login = function () {
 	  		$scope.vm.dataLoading = true;

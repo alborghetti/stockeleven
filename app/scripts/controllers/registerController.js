@@ -7,7 +7,9 @@
 	 * Controller of registration page
 	 */
 	 angular.module('stockElevenApp')
-	 .controller('RegisterCtrl', function ($scope, $firebaseAuth) {
+	 .controller('RegisterCtrl', function ($scope, $firebaseAuth, $rootScope) {
+
+	 	$rootScope.$emit('viewLoaded', {});
 
 	 	$scope.registerTmp = function () {
 	 		$scope.vm.error = true;
@@ -47,7 +49,7 @@
 	 					}
 	 				})
 
-	 				
+
 	 			} else {
 	 				$scope.$apply(function() {
 	 					$scope.vm.error = true;

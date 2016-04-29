@@ -22,30 +22,30 @@
 <body ng-app="stockElevenApp" stockeleven-window-scroll>
     <!--[if lte IE 8]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-      <![endif]-->
-    <nav class="navbar navbar-default navbar-fixed-top" >
+    <![endif]-->
+    <nav class="navbar navbar-default navbar-fixed-top" ng-controller="MainCtrl">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <button type="button" class="navbar-toggle" ng-click="navbarCollapsed = !navbarCollapsed;" >
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#/"><img src="images/logo.png" class="logo" ></a>
+                <a class="navbar-brand" href="#/#top"><img src="images/logo.png" class="logo" ></a>
             </div>
-            <div class="collapse navbar-collapse " id="myNavbar">
-                <div ng-controller="MainCtrl" ng-show="!isLoggedIn || false" class="ng-hide">
+            <div class="collapse navbar-collapse" uib-collapse="navbarCollapsed">
+                <div ng-show="!isLoggedIn || false" class="ng-hide">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                         <li><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     </ul>
                 </div>
-                <div ng-controller="MainCtrl" ng-show="isLoggedIn || false" class="ng-hide">
+                <div ng-show="isLoggedIn || false" class="ng-hide">
                     <ul class="nav navbar-nav navbar-right">
                         <li ng-class="{active:isActive('/app')}">
                             <a href="#/app">Stock Eleven Lists</a>
                         </li>
-                        <li ng-class="{active:isActive('/portfoliosStockEleven')}">
+                        <li ng-class="{active:isActive('/portfoliosStockEleven')}" >
                             <a href="#/portfoliosStockEleven">Stock Eleven Portfolios</a>
                         </li>
                         <li ng-class="{active:isActive('/myPortfolios')}">
@@ -53,8 +53,7 @@
                         </li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span class="glyphicon glyphicon-user"></span> {{userName}} <span class="caret"></span>
-                            </a>
+                                    <span class="glyphicon glyphicon-user"></span> {{userName}} <span class="caret"></span>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a href="#/">User settings</a></li>
                                 <li><a href="#/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -66,8 +65,21 @@
         </div>
     </nav>
 
-    <!-- Main part -->
+        <!-- Main part -->
     <div ng-view=""></div>
+
+    <!-- Footer part -->
+    <footer class="footer">
+        <div class="container-fluid text-center">
+            <p>
+                <a href="#/about" class="text-muted">About Us</a>
+                <a href="#/contact" class="text-muted">Contact Us</a>
+                <a href="#/conditions" class="text-muted">Terms &amp; Conditions</a>
+                <a href="#/privacy" class="text-muted">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -84,6 +96,7 @@
     <script src="bower_components/angularfire/dist/angularfire.js"></script>
     <script src="bower_components/bootstrap-table/src/bootstrap-table.js"></script>
     <script src="bower_components/angular-scroll/angular-scroll.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

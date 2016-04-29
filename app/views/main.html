@@ -1,12 +1,13 @@
 
-<div style="background-color: #1abc9c;" class="jumbotron text-center" id="top">
+<div style="background-color: #1abc9c;" class="jumbotron text-center">
   <div class="container-fluid">
     <h1>Stock Screener for building your investment portfolio</h1>
     <br />
-    <p><a class="btn btn-stockeleven btn-lg" href="#learn" du-smooth-scroll du-scrollspy role="button">Learn more &raquo;</a></p>
+    <p><a class="btn btn-stockeleven btn-lg" href="#section-2" du-smooth-scroll role="button">Learn more &raquo;</a></p>
   </div>
 </div>
 
+<section id="section-1">
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-8 col-sm-offset-1">
@@ -20,8 +21,10 @@
     </div>
   </div>
 </div>
+</section>
 
-<div id="learn" class="container-fluid bg-grey">
+<section id="section-2">
+<div class="container-fluid bg-grey">
   <div class="row">
     <div class="col-sm-3 col-sm-offset-1">
     <span class="glyphicon glyphicon-globe logo slideanim"></span>
@@ -42,7 +45,9 @@
     </div>
   </div>
 </div>
+</section>
 
+<section id="section-3">
 <div class="container-fluid text-center">
   <h2>SERVICES</h2>
   <br />
@@ -71,7 +76,9 @@
     </div>
   </div>
 </div>
+</section>
 
+<section id="section-4">
 <div class="container-fluid text-center bg-grey">
   <h2>DEMO LISTS</h2>
   <div id="myCarousel" class="carousel slide " data-ride="carousel">
@@ -127,21 +134,13 @@
     </a>
   </div>
 </div>
+</section>
 
-<a href="#top" du-smooth-scroll du-scrollspy id="back-to-top" title="Back to top">
-<span class="glyphicon glyphicon-chevron-up" style="display: block !important; text-align:center;"></span>
-</a>
+<button ng-click="toTheTop()" id="back-to-top" title="Back to top" >
+<span class="glyphicon glyphicon-chevron-up"></span>
+</button>
 
 
-<!-- Footer part -->
-<footer class="container-fluid text-center">
-  <p>
-    <a href="#/about" class="text-muted">About Us</a>
-    <a href="#/contact" class="text-muted">Contact Us</a>
-    <a href="#/conditions" class="text-muted">Terms &amp; Conditions</a>
-    <a href="#/privacy" class="text-muted">Privacy Policy</a>
-  </p>
-</footer>
 
 
 

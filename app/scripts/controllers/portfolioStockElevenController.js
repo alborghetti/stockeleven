@@ -8,7 +8,9 @@
  * Controller of the stockElevenApp
  */
 angular.module('stockElevenApp')
-  .controller('portfolioStockElevenCtrl', function ($scope, $routeParams) {
+  .controller('portfolioStockElevenCtrl', function ($scope, $rootScope, $routeParams) {
+
+    $rootScope.$emit('viewLoaded', {});
 
     var ref = new Firebase("https://stockeleven.firebaseio.com/");
 
