@@ -34,6 +34,8 @@ module.exports = function(config) {
       'bower_components/bootstrap-table/src/bootstrap-table.js',
       'bower_components/angular-scroll/angular-scroll.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'bower_components/moment/moment.js',
+      'bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

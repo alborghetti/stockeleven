@@ -30,10 +30,9 @@
     ref.once("value", function (snapshot) {
           //console.log(snapshot.val());
           var List = snapshot.val();
-          var date = new Date(List.timestamp);
           $scope.$apply(function () {
             $scope.stocks = List.stocks.slice(0, 30);
-            $scope.listDate = date.toDateString();
+            $scope.listDate = moment.tz(List.timestamp, List.timezone).format('dddd, MMMM Do YYYY');
             $scope.listText = List.description;
             $scope.dataLoading = false;
             $scope.tableOptions = {
