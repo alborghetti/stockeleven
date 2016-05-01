@@ -91,7 +91,7 @@ angular.module('stockElevenApp')
                   sortable: true
                 }, {
                   field: 'deltaP',
-                  title: 'Delta price',
+                  title: 'Delta price %',
                   align: 'right',
                   valign: 'bottom',
                   sortable: true
