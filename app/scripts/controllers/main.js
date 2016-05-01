@@ -15,7 +15,7 @@ angular.module('stockElevenApp')
   	});
 
   	$rootScope.$emit('viewLoaded');
-
+ 
   	$scope.isActive = function(route) {
         return route === $location.path();
     }
@@ -31,20 +31,20 @@ angular.module('stockElevenApp')
 	var ref = new Firebase("https://stockeleven.firebaseio.com/");
 	ref.onAuth(function(authData) {
 		if (authData) {
-			$scope.isLoggedIn = true;
 			ref = new Firebase("https://stockeleven.firebaseio.com/users/"+authData.uid);
 			ref.once("value", function(snapshot) {
       			var snapshotUser = snapshot.val();
 
 				$scope.$apply(function() {
 					$scope.userName = snapshotUser.firstName + ' ' + snapshotUser.lastName;
+					$scope.isLoggedIn = true;
 				});
 				}, function (errorObject) {
 					console.log("The read failed: " + errorObject.code);
 			});
 
 		} else {
-			$scope.isLoggedIn = false;
+				$scope.isLoggedIn = false;
 		}
 	});
 
