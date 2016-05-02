@@ -17,14 +17,18 @@ body {
   opacity:0.80;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .logo {
   width: 180px;
-  color: #1abc9c;
+  color: #2e8bcc;
   font-size: 200px;
 }
 
 .logo-small {
-  color: #1abc9c;
+  color: #2e8bcc;
   font-size: 50px;
 }
 
@@ -44,7 +48,7 @@ body {
 
 .navbar {
   margin-bottom: 0;
-  background-color: #1abc9c;
+  background-color: #2e8bcc;
   z-index: 9999;
   border: 0;
   color: #fff !important;
@@ -59,7 +63,7 @@ body {
 }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
-  color: #1abc9c !important;
+  color: #2e8bcc !important;
   background-color: #fff !important;
 }
 
@@ -69,12 +73,12 @@ body {
 }
 
 .navbar-default .navbar-nav > .open > a {
-  color: #1abc9c !important;
+  color: #2e8bcc !important;
   background-color: #fff !important;
 }
 
 .dropdown-menu  {
-  background-color: #1abc9c !important;
+  background-color: #2e8bcc !important;
   border-radius: 0;
 }
 
@@ -86,32 +90,61 @@ body {
   color: #fff !important;
 }
 
-.dropdown-menu li a:hover, .dropdown-menu li.active a{
+.btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
   background-color: #fff!important;
-  color: #1abc9c !important;
+  color: #2e8bcc !important;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+  background-color: #fff!important;
+  color: #2e8bcc !important;
+} 
+
+.dropdown-menu li a:hover, 
+.dropdown-menu li.active a,
+.dropdown-menu li.focus a {
+  background-color: #fff!important;
+  color: #2e8bcc !important;
+}
+
+.icon-bar {
+  background-color: #fff !important;
 }
 .container-fluid {
   padding: 60px 50px;
 }
 
-.btn-stockeleven {
-    color: #fff !important;
-    background-color: #1abc9c;
-    border-color: #fff;
-    border-radius: 0px;
-}
-
 .btn-default {
     color: #fff !important;
-    background-color: #1abc9c;
+    background-color: #2e8bcc;
     border-color: #fff;
     border-radius: 0px !important ;
 }
 
-.btn-stockeleven:hover {
-    color:  #1abc9c !important;
-    background-color: #fff;
-    border-color: #1abc9c;
+.btn-stockeleven {
+    color: #fff !important;
+    background-color: #2e8bcc !important;
+    border-color: #fff;
+    border-radius: 0px;
+}
+
+.btn-stockeleven:hover,
+.btn-default:hover,
+.btn-default:focus {
+    color:  #2e8bcc !important;
+    background-color: #fff !important;
+    border-color: #2e8bcc;
+}
+
+.btn-stockeleven-trsp {
+    background-color: transparent !important;
+    border-radius: 0px;
+}
+
+.btn-stockeleven-trsp:hover {
+    background-color: transparent !important;
+    border-color: #fff;
+    border-radius: 0px;
 }
 
 .label {
@@ -119,7 +152,7 @@ body {
 }
 
 .pagination > li > a, .pagination > li > span{
-  color:  #1abc9c;
+  color:  #2e8bcc;
 }
 
 .pagination > li > a:hover, .pagination > li > span:hover,
@@ -131,8 +164,8 @@ body {
 .pagination > .active > a:hover, .pagination > .active > a:active,
 .pagination > .active > a:active, .pagination > .active  > span:active {
     color: #fff;
-    background-color: #1abc9c;
-    border-color:  #1abc9c;
+    background-color: #2e8bcc;
+    border-color:  #2e8bcc;
 }
 
 .thumbnail {
@@ -164,8 +197,7 @@ body {
   max-width: 200px;
   border-radius: 0px;
   cursor: pointer;
-  background-color: #1abc9c;
-  box-shadow: 10px 10px 5px #222;
+  background-color: #2e8bcc;
   border-style: none;
   text-align: center;
   display: block;
@@ -182,7 +214,6 @@ body {
   max-width: 200px;
   border-radius: 0px ;
   background-color: #C0C0C0;
-  box-shadow: 10px 10px 5px #222;
   border-style: none;
   text-align: center;
   float: left;
@@ -225,6 +256,7 @@ a:hover {
 
 
 .link-text-hidden {
+  padding-top: 15px;
   display: none;
 
 }
@@ -235,8 +267,7 @@ a:hover {
 .list-box-disabled:hover,
 .list-box-disabled:focus,
 .list-box-disabled:active {
- border: 5px solid #036b53;
-
+  box-shadow: 10px 10px 5px #222;
 }
 
 .list-box:hover .link-text-l2,
@@ -283,7 +314,7 @@ footer.footer {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 150px;
-  background: #1abc9c;
+  background: #2e8bcc;
   overflow: hidden;
 }
 
@@ -296,15 +327,15 @@ footer.footer {
 
 .carousel-control.right, .carousel-control.left {
   background-image: none;
-  color: #1abc9c;
+  color: #2e8bcc;
 }
 
 .carousel-indicators li {
-  border-color: #1abc9c;
+  border-color: #2e8bcc;
 }
 
 .carousel-indicators li.active {
-  background-color: #1abc9c;
+  background-color: #2e8bcc;
 }
 
 .item h4 {
@@ -329,7 +360,7 @@ footer.footer {
 .sk-cube-grid .sk-cube {
   width: 33%;
   height: 33%;
-  background-color: #1abc9c;
+  background-color: #2e8bcc;
   float: left;
   -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
           animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
@@ -492,17 +523,18 @@ footer.footer {
 
 #back-to-top {
     position: fixed;
-    bottom: 0px;
-    right: 40px;
+    bottom: 0%;
+    right: 5%;
     z-index: 9999;
     width: 50px;
-    height: 90px;
+    height: 60px;
     text-align: center;
     line-height: 30px;
-    background: #1abc9c;
+    background: #2e8bcc;
     color: #fff;
     cursor: pointer;
-    border-style: solid; border-color: #1abc9c;
+    border-style: solid; 
+    border-color: #2e8bcc;
     border-radius: 0px;
     text-decoration: none;
     transition: opacity 0.5s ease-out;
@@ -511,8 +543,8 @@ footer.footer {
     outline-width: 0px;
 }
 #back-to-top:hover {
-    background: transparent;
-    color: #1abc9c;
+    background: #fff;
+    color: #2e8bcc;
 }
 
 #back-to-top.show {
@@ -520,41 +552,18 @@ footer.footer {
 }
 
 .btn-circle {
-  background: #1abc9c;
+  background: #2e8bcc;
   color: #fff;
-  width: 50px;
-  height: 50px;
-  padding: 10px 10px;
-  font-size: 18px;
+  width: 80px;
+  height: 80px;
+  font-size: 25px;
   line-height: 1.33;
-  border-radius: 25px;
-  box-shadow: 5px 5px 5px #222;
-  border-spacing: 5px;
-  border-color: #1abc9c;
-}
-
-.btn-circle-red {
-  background: #e74c3c;
-  color: #fff;
-  width: 50px;
-  height: 50px;
-  padding: 10px 10px;
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 25px;
-  box-shadow: 5px 5px 5px #222;
-  border-spacing: 5px;
-  border-color: #e74c3c;
+  border-radius: 40px;
 }
 
 .btn-circle:hover {
-  background: transparent;
-  color: #1abc9c;
-}
-
-.btn-circle-red:hover {
-  background: transparent;
-  color: #e74c3c;
+  color: #fff;
+  box-shadow: 10px 10px 5px #222;
 }
 
 

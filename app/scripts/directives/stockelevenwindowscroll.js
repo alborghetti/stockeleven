@@ -22,23 +22,11 @@
          }
        });
 
-        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-          $('#back-to-top').removeClass("slide-down");
-          $('#back-to-top').addClass("slide");
-          $('#back-to-top').css({ bottom: '150px'});
-        } else {
-          $('#back-to-top').removeClass("slide");
-          $('#back-to-top').addClass("slide-down");
-          $('#back-to-top').css({ bottom: '0px'});
-        }
-
         if (winTop > scrollTrigger) {
           $('#back-to-top').addClass('show');
         } else {
           $('#back-to-top').removeClass('show');
         }
-
-
       });
     }
   };

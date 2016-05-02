@@ -19,34 +19,37 @@
     <!-- endbuild -->
 </head>
 
-<body ng-app="stockElevenApp" stockeleven-window-scroll>
+<body ng-app="stockElevenApp" stockeleven-window-scroll >
     <!--[if lte IE 8]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <nav class="navbar navbar-default navbar-fixed-top" ng-controller="MainCtrl" ng-init="isLoggedIn = false">
+    <nav class="navbar navbar-default navbar-fixed-top" ng-controller="MainCtrl">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" ng-click="navbarCollapsed = !navbarCollapsed;" >
+                <button type="button" class="navbar-toggle btn-stockeleven-trsp" ng-click="navbarCollapsed = !navbarCollapsed;">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#/#top"><img src="images/logo.png" class="logo" ></a>
+                <a class="navbar-brand" href="#/#top"><img src="images/logo.png" class="logo"></a>
             </div>
             <div class="collapse navbar-collapse" uib-collapse="navbarCollapsed">
-                    <ul class="nav navbar-nav navbar-right" ng-if="!isLoggedIn">
-                        <li ng-if="!isLoggedIn"><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li ng-if="!isLoggedIn"><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <div ng-hide="isLoggedIn || dataLoading">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right" ng-if="isLoggedIn">
-                        <li ng-class="{active:isActive('/app')}"  ng-if="isLoggedIn">
+                </div>
+                <div ng-hide="!isLoggedIn || dataLoading">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ng-class="{active:isActive('/app')}" ng-if="isLoggedIn">
                             <a href="#/app">Stock Eleven Lists</a>
                         </li>
-                        <li ng-class="{active:isActive('/portfoliosStockEleven')}"  ng-if="isLoggedIn">
+                        <li ng-class="{active:isActive('/portfoliosStockEleven')}">
                             <a href="#/portfoliosStockEleven">Stock Eleven Portfolios</a>
                         </li>
-                        <li ng-class="{active:isActive('/myPortfolios')}"  ng-if="isLoggedIn">
-                            <a href="#/myPortfolios"">My Portfolios</a>
+                        <li ng-class="{active:isActive('/myPortfolios')}">
+                            <a href="#/myPortfolios" ">My Portfolios</a>
                         </li>
                         <li class="dropdown"  ng-if="isLoggedIn">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  ng-if="isLoggedIn">
@@ -57,64 +60,52 @@
                             </ul>
                         </li>
                     </ul>
+                </div>
             </div>
         </div>
     </nav>
 
-        <!-- Main part -->
-    <div ng-view=""></div>
-
-    <!-- Footer part -->
-    <footer class="footer">
-        <div class="container-fluid text-center">
-            <p>
-                <a href="#/about" class="text-muted">About Us</a>
-                <a href="#/contact" class="text-muted">Contact Us</a>
-                <a href="#/conditions" class="text-muted">Terms &amp; Conditions</a>
-                <a href="#/privacy" class="text-muted">Privacy Policy</a>
-            </p>
-        </div>
-    </footer>
-
+    <!-- Main part -->
+    <div ng-view=" "></div>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/firebase/firebase.js"></script>
-    <script src="bower_components/angularfire/dist/angularfire.js"></script>
-    <script src="bower_components/bootstrap-table/src/bootstrap-table.js"></script>
-    <script src="bower_components/angular-scroll/angular-scroll.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/moment/moment.js"></script>
-    <script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js "></script>
+    <script src="bower_components/angular/angular.js "></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js "></script>
+    <script src="bower_components/angular-animate/angular-animate.js "></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js "></script>
+    <script src="bower_components/angular-resource/angular-resource.js "></script>
+    <script src="bower_components/angular-route/angular-route.js "></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js "></script>
+    <script src="bower_components/angular-touch/angular-touch.js "></script>
+    <script src="bower_components/firebase/firebase.js "></script>
+    <script src="bower_components/angularfire/dist/angularfire.js "></script>
+    <script src="bower_components/bootstrap-table/src/bootstrap-table.js "></script>
+    <script src="bower_components/angular-scroll/angular-scroll.js "></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js "></script>
+    <script src="bower_components/moment/moment.js "></script>
+    <script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js "></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/listController.js"></script>
-    <script src="scripts/controllers/demoListController.js"></script>
-    <script src="scripts/controllers/loginController.js"></script>
-    <script src="scripts/controllers/logoutController.js"></script>
-    <script src="scripts/controllers/registerController.js"></script>
-    <script src="scripts/controllers/passwordRecoveryController.js"></script>
-    <script src="scripts/controllers/appHomeController.js"></script>
-    <script src="scripts/controllers/appPortfoliosStockElevenController.js"></script>
-    <script src="scripts/controllers/portfolioStockElevenController.js"></script>
-    <script src="scripts/controllers/appMyPortfoliosController.js"></script>
-    <script src="scripts/directives/stockelevenbstablecontroller.js"></script>
-    <script src="scripts/directives/stockeleventablescroll.js"></script>
-    <script src="scripts/directives/stockelevenback.js"></script>
-    <script src="scripts/directives/stockelevenwindowscroll.js"></script>
+    <script src="scripts/app.js "></script>
+    <script src="scripts/controllers/main.js "></script>
+    <script src="scripts/controllers/listController.js "></script>
+    <script src="scripts/controllers/demoListController.js "></script>
+    <script src="scripts/controllers/loginController.js "></script>
+    <script src="scripts/controllers/logoutController.js "></script>
+    <script src="scripts/controllers/registerController.js "></script>
+    <script src="scripts/controllers/passwordRecoveryController.js "></script>
+    <script src="scripts/controllers/appHomeController.js "></script>
+    <script src="scripts/controllers/appPortfoliosStockElevenController.js "></script>
+    <script src="scripts/controllers/portfolioStockElevenController.js "></script>
+    <script src="scripts/controllers/appMyPortfoliosController.js "></script>
+    <script src="scripts/directives/stockelevenbstablecontroller.js "></script>
+    <script src="scripts/directives/stockeleventablescroll.js "></script>
+    <script src="scripts/directives/stockelevenback.js "></script>
+    <script src="scripts/directives/stockelevenwindowscroll.js "></script>
     <!-- endbuild -->
 
 </body>

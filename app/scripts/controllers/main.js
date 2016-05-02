@@ -9,6 +9,9 @@
  */
 angular.module('stockElevenApp')
   .controller('MainCtrl', function ($scope, $rootScope, $window, $firebaseAuth, $location, $anchorScroll, $document) {
+	  
+	$scope.isLoggedIn = false;
+	$scope.dataLoading = true;
 
   	$rootScope.$on('viewLoaded', function(event, args) {
   		$scope.navbarCollapsed = true;
@@ -38,6 +41,7 @@ angular.module('stockElevenApp')
 				$scope.$apply(function() {
 					$scope.userName = snapshotUser.firstName + ' ' + snapshotUser.lastName;
 					$scope.isLoggedIn = true;
+					$scope.dataLoading = false;
 				});
 				}, function (errorObject) {
 					console.log("The read failed: " + errorObject.code);
@@ -45,6 +49,7 @@ angular.module('stockElevenApp')
 
 		} else {
 				$scope.isLoggedIn = false;
+				$scope.dataLoading = false;
 		}
 	});
 

@@ -28,6 +28,13 @@ angular.module('stockElevenApp')
         ref.child('lists/' + baseList).once("value", function (snapshot) {
           var listDescription = snapshot.val().description;
           var timezone = snapshot.val().timezone;
+          
+          //Format stocks values
+          for (var i=0; i<portfolio.stocks.length;i++){
+            var stock = portfolio.stocks[i];
+             stock.pl = parseFloat(stock.pl.replace(",",""));
+             stock.deltaP = parseFloat(stock.deltaP.replace("%",""));
+          }
           $scope.$apply(function () {
             $scope.dataLoading = false;
             $scope.portfolioDescription = portfolioDescription;
@@ -62,7 +69,7 @@ angular.module('stockElevenApp')
               sortName: 'purchaseValue',
               sortOrder: 'desc',
               rowStyle: function (row, index) {
-                if (row.deltaP.substr(0, 1) === '-') {
+                if (row.deltaP < 0) {
                   return {
                     classes: 'danger'
                   };
@@ -90,6 +97,12 @@ angular.module('stockElevenApp')
                   valign: 'bottom',
                   sortable: true
                 }, {
+                  field: 'purchasedOn',
+                  title: 'Purchased on',
+                  align: 'right',
+                  valign: 'bottom',
+                  sortable: true
+                }, {
                   field: 'deltaP',
                   title: 'Delta price %',
                   align: 'right',
@@ -104,6 +117,12 @@ angular.module('stockElevenApp')
                 }, {
                   field: 'currentValue',
                   title: 'Current value',
+                  align: 'right',
+                  valign: 'bottom',
+                  sortable: true
+                }, {
+                  field: 'pl',
+                  title: 'Profit and Loss',
                   align: 'right',
                   valign: 'bottom',
                   sortable: true
