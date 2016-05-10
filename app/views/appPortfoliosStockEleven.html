@@ -1,23 +1,26 @@
 <div class="app-section jumbotron">
-<div ng-if="dataLoading" class="loading">
-	<div class="sk-cube-grid">
-		<div class="sk-cube sk-cube1"></div>
-		<div class="sk-cube sk-cube2"></div>
-		<div class="sk-cube sk-cube3"></div>
-		<div class="sk-cube sk-cube4"></div>
-		<div class="sk-cube sk-cube5"></div>
-		<div class="sk-cube sk-cube6"></div>
-		<div class="sk-cube sk-cube7"></div>
-		<div class="sk-cube sk-cube8"></div>
-		<div class="sk-cube sk-cube9"></div>
+	<div ng-if="dataLoading" class="loading">
+		<div class="sk-cube-grid">
+			<div class="sk-cube sk-cube1"></div>
+			<div class="sk-cube sk-cube2"></div>
+			<div class="sk-cube sk-cube3"></div>
+			<div class="sk-cube sk-cube4"></div>
+			<div class="sk-cube sk-cube5"></div>
+			<div class="sk-cube sk-cube6"></div>
+			<div class="sk-cube sk-cube7"></div>
+			<div class="sk-cube sk-cube8"></div>
+			<div class="sk-cube sk-cube9"></div>
+		</div>
 	</div>
-</div>
+	<div ng-if="!isLoggedIn" class="loading">
+		<h2 class="bg-info col-md-4 col-md-offset-4">please <a href="#/login">login</a></h2>
+	</div>
 	<div class="container" ng-if="!dataLoading">
 		<br />
 		<div class="row">
 			<div class="col-md-3" ng-repeat="portfolio in portfolios">
 				<div class="col-md-12">
-					<a  href="#/portfoliosStockEleven/{{portfolio.portfolioId}}">
+					<a href="#/portfoliosStockEleven/{{portfolio.portfolioId}}">
 						<span class="thumbnail list-box {{portfolio.slide}}">
 							<h3 class="link-text">{{portfolio.description}}</h3>
 							<h4 class="link-text-l2">{{portfolio.baseList}}</h4>
@@ -27,7 +30,20 @@
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-md-3" ng-repeat="inactivePortfolio in inactivePortfolios">
+				<div class="col-md-12">
+					<a href="#/activation/{{inactivePortfolio.portfolioId}}">
+						<span class="thumbnail list-box-disabled {{inactivePortfolio.slide}}">
+							<h3 class="link-text">{{inactivePortfolio.description}}</h3>
+							<h4 class="link-text-l2">{{inactivePortfolio.baseList}}</h4>
+							<h4 class="link-text-l2">Inactive</h4>
+							<h3 class="link-text-hidden">Activate</h3>
+						</span>
+					</a>
+				</div>
+			</div>
+		</div>
 		<br />
 	</div>
 </div>
-

@@ -14,6 +14,7 @@ angular.module('stockElevenApp')
 
     $scope.isLoggedIn = false;
     $scope.portfolios = [];
+    $scope.inactivePortfolios = [];
     $scope.dataLoading = true;
 
     var ref = new Firebase("https://stockeleven.firebaseio.com/");
@@ -80,10 +81,8 @@ angular.module('stockElevenApp')
           console.log("The read failed: " + errorObject.code);
         });
       } else {
-        $scope.$apply(function () {
           $scope.dataLoading = false;
           $scope.isLoggedIn = false;
-        });
       }
     });
 

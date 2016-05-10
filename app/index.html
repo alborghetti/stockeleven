@@ -31,29 +31,31 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#/#top"><img src="images/logo.png" class="logo"></a>
+                <a class="navbar-brand" href="#/"><img src="images/logo.png" class="logo"></a>
             </div>
             <div class="collapse navbar-collapse" uib-collapse="navbarCollapsed">
-                <div ng-hide="isLoggedIn || dataLoading">
+                <div ng-hide="!dataLoading" >
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a>Loading...</li></a>
+                    </ul>
+                </div>
+                <div ng-show="isNotLoggedIn">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                         <li><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     </ul>
                 </div>
-                <div ng-hide="!isLoggedIn || dataLoading">
+                <div ng-show="isLoggedIn">
                     <ul class="nav navbar-nav navbar-right">
-                        <li ng-class="{active:isActive('/app')}" ng-if="isLoggedIn">
+                        <li ng-class="{active:isActive('/app')}">
                             <a href="#/app">Stock Eleven Lists</a>
                         </li>
                         <li ng-class="{active:isActive('/portfoliosStockEleven')}">
                             <a href="#/portfoliosStockEleven">Stock Eleven Portfolios</a>
                         </li>
-                        <li ng-class="{active:isActive('/myPortfolios')}">
-                            <a href="#/myPortfolios" ">My Portfolios</a>
-                        </li>
-                        <li class="dropdown"  ng-if="isLoggedIn">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  ng-if="isLoggedIn">
-                                    <span class="glyphicon glyphicon-user" ></span> {{userName}} <span class="caret" ></span></a>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="glyphicon glyphicon-user"></span> {{userName}} <span class="caret" ></span></a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a href="#/">User settings</a></li>
                                 <li><a href="#/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -70,22 +72,22 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js "></script>
-    <script src="bower_components/angular/angular.js "></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js "></script>
-    <script src="bower_components/angular-animate/angular-animate.js "></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js "></script>
-    <script src="bower_components/angular-resource/angular-resource.js "></script>
-    <script src="bower_components/angular-route/angular-route.js "></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js "></script>
-    <script src="bower_components/angular-touch/angular-touch.js "></script>
-    <script src="bower_components/firebase/firebase.js "></script>
-    <script src="bower_components/angularfire/dist/angularfire.js "></script>
-    <script src="bower_components/bootstrap-table/src/bootstrap-table.js "></script>
-    <script src="bower_components/angular-scroll/angular-scroll.js "></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js "></script>
-    <script src="bower_components/moment/moment.js "></script>
-    <script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js "></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="bower_components/bootstrap-table/src/bootstrap-table.js"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
