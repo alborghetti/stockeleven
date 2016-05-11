@@ -8,7 +8,7 @@
  * Controller of the stockElevenApp
  */
 angular.module('stockElevenApp')
-  .controller('MainCtrl', function ($scope, $rootScope, $window, $firebaseAuth, $location, $anchorScroll, $document) {
+	.controller('MainCtrl', function ($scope, $rootScope, $window, $firebaseAuth, $location, $anchorScroll, $document) {
 
 		$scope.dataLoading = true;
 
@@ -20,18 +20,19 @@ angular.module('stockElevenApp')
 
 		$scope.isActive = function (route) {
 			return route === $location.path();
-    }
+		}
 
 		$scope.toTheTop = function () {
 			$document.duScrollTop(0, 2000);
-    };
+		};
 
 		$scope.slide = function (dir) {
 			$('#myCarousel').carousel(dir);
 		};
-
+		var that = this;
 		var ref = new Firebase("https://stockeleven.firebaseio.com/");
 		ref.onAuth(function (authData) {
+			that.inOnAuth = true;
 			if (authData) {
 				ref = new Firebase("https://stockeleven.firebaseio.com/users/" + authData.uid);
 				ref.once("value", function (snapshot) {
@@ -59,4 +60,4 @@ angular.module('stockElevenApp')
 			}
 		});
 
-  });
+	});
