@@ -70,6 +70,20 @@
     <!-- Main part -->
     <div ng-view=" "></div>
 
+    <!-- Firebase statistics -->
+
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAyQEh2TVycjJO1M5mbIoHgIMjt2ch7ojE",
+        authDomain: "stockeleven.firebaseapp.com",
+        databaseURL: "https://stockeleven.firebaseio.com",
+        storageBucket: "project-7712266373031745072.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -103,7 +117,6 @@
     <script src="scripts/controllers/appHomeController.js "></script>
     <script src="scripts/controllers/appPortfoliosStockElevenController.js "></script>
     <script src="scripts/controllers/portfolioStockElevenController.js "></script>
-    <script src="scripts/controllers/appMyPortfoliosController.js "></script>
     <script src="scripts/directives/stockelevenbstablecontroller.js "></script>
     <script src="scripts/directives/stockeleventablescroll.js "></script>
     <script src="scripts/directives/stockelevenback.js "></script>

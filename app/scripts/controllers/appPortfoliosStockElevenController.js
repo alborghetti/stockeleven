@@ -17,16 +17,22 @@ angular.module('stockElevenApp')
     $scope.inactivePortfolios = [];
     $scope.dataLoading = true;
 
-    var ref = new Firebase("https://stockeleven.firebaseio.com/");
-    ref.onAuth(function (authData) {
-      if (authData) {
+    firebase.auth().onAuthStateChanged(function(user) {
+      var userOk = false;
+
+      if (user) {
+        userOk = user.emailVerified;
+      }
+
+      if (userOk) {
         $scope.isLoggedIn = true;
         //Get all defined portfolios
+        var ref = firebase.database().ref();
         ref.child('/stockElevenPortfolios').once("value", function (snapshot) {
           var portfolios = snapshot.val();
 
           //Get all user authorized portfolios
-          ref.child('usersAuthorizations/' + authData.uid + '/stockElevenPortfolios').once("value", function (userSnapshot) {
+          ref.child('usersAuthorizations/' + user.uid + '/stockElevenPortfolios').once("value", function (userSnapshot) {
             var userPortfolios = userSnapshot.val();
 
             //Get all lists

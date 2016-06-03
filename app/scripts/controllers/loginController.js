@@ -13,26 +13,32 @@ angular.module('stockElevenApp')
 
   		$scope.login = function () {
 	  		$scope.vm.dataLoading = true;
-	  		var ref = new Firebase("https://stockeleven.firebaseio.com/");
 
-			ref.authWithPassword({
-  				email    : $scope.vm.email,
-				password : $scope.vm.password
-			}, function (error, authData) {
-			  if (error) {
-			  	$scope.$apply(function () {
-						$scope.vm.error = true;
-						$scope.vm.errorMessage = error.message;
-						$scope.vm.dataLoading = false;
+			firebase.auth().signInWithEmailAndPassword( $scope.vm.email, $scope.vm.password).then(function(user) {
+				$scope.$apply(function () {
+					$scope.vm.dataLoading = false;
+        			if ( !user.emailVerified) {
+        				$scope.vm.error = true;
+        				$scope.vm.errorMessage = "email not verified yet";
+        				$scope.vm.send = true;
+        			} else {
+        				$scope.vm.error = false;
+        				$location.path('/app');
+        			}
 				});
-			  } else {
-			    $scope.$apply(function () {
-						$scope.vm.error = false;
-						$scope.vm.dataLoading = false;
-            			$location.path('/app');
+			}, function(error){
+				$scope.$apply(function () {
+					$scope.vm.error = true;
+					$scope.vm.errorMessage = error.message;
+					$scope.vm.dataLoading = false;
 				});
-			  }
 			});
-	  	}
+	  	};
+
+	  	$scope.send = function () {
+	  		var user = firebase.auth().currentUser;
+	  		user.sendEmailVerification();
+	  		//Todo: popup for mail sent
+	  	};
 
   });

@@ -22,7 +22,7 @@ body {
 }
 
 .logo {
-  width: 180px;
+  width: 220px;
   color: #2e8bcc;
   font-size: 200px;
 }
@@ -98,9 +98,9 @@ body {
 .btn:focus, .btn:active:focus, .btn.active:focus {
   background-color: #fff!important;
   color: #2e8bcc !important;
-} 
+}
 
-.dropdown-menu li a:hover, 
+.dropdown-menu li a:hover,
 .dropdown-menu li.active a,
 .dropdown-menu li.focus a {
   background-color: #fff!important;
@@ -535,7 +535,7 @@ footer.footer {
     background: #2e8bcc;
     color: #fff;
     cursor: pointer;
-    border-style: solid; 
+    border-style: solid;
     border-color: #2e8bcc;
     border-radius: 0px;
     text-decoration: none;

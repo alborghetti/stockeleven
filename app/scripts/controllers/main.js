@@ -29,13 +29,17 @@ angular.module('stockElevenApp')
 		$scope.slide = function (dir) {
 			$('#myCarousel').carousel(dir);
 		};
+
 		var that = this;
-		var ref = new Firebase("https://stockeleven.firebaseio.com/");
-		ref.onAuth(function (authData) {
-			that.inOnAuth = true;
-			if (authData) {
-				ref = new Firebase("https://stockeleven.firebaseio.com/users/" + authData.uid);
-				ref.once("value", function (snapshot) {
+		 firebase.auth().onAuthStateChanged(function(user) {
+		 	that.inOnAuth = true;
+		 	var userOk = false;
+
+		      if (user) {
+		        userOk = user.emailVerified;
+		      }
+      		if (userOk) {
+				firebase.database().ref('/users/'+ user.uid).once("value", function (snapshot) {
 					var snapshotUser = snapshot.val();
 
 					$scope.$apply(function () {

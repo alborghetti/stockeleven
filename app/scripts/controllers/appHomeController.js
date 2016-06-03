@@ -17,16 +17,21 @@ angular.module('stockElevenApp')
     $scope.inactiveLists = [];
     $scope.dataLoading = true;
 
-    var ref = new Firebase("https://stockeleven.firebaseio.com/");
-    ref.onAuth(function (authData) {
-      if (authData) {
+    firebase.auth().onAuthStateChanged(function(user) {
+      var userOk = false;
+
+      if (user) {
+        userOk = user.emailVerified;
+      }
+
+      if (userOk) {
         $scope.isLoggedIn = true;
         //Get all defined lists
-        ref.child('/lists').once("value", function (snapshot) {
+        firebase.database().ref('/lists').once("value", function (snapshot) {
           var lists = snapshot.val();
 
           //Get all user authorized lists
-          ref.child('usersAuthorizations/' + authData.uid + '/lists').once("value", function (userSnapshot) {
+          firebase.database().ref('usersAuthorizations/' + user.uid + '/lists').once("value", function (userSnapshot) {
             var userLists = userSnapshot.val();
 
             //Move lists to the scope
