@@ -14,6 +14,18 @@ angular.module('stockElevenApp')
 
     var ref = firebase.database().ref();
 
+    var cellStyle = function (value, row, index) {
+        if (value < 0) {
+          return {
+            classes: 'SEdanger'
+          };
+        } else {
+          return {
+            classes: 'SESuccess'
+          };
+        }
+      };
+
     $scope.portfolioId = $routeParams.portfolioId;
     $scope.dataLoading = true;
 
@@ -75,16 +87,16 @@ angular.module('stockElevenApp')
                     maintainSelected: true,
                     sortName: 'purchaseValue',
                     sortOrder: 'desc',
-                    rowStyle: function (row, index) {
-                      if (row.deltaP < 0) {
-                        return {
-                          classes: 'danger'
-                        };
-                      }
-                      return {
-                        classes: 'success'
-                      };
-                    },
+                    // rowStyle: function (row, index) {
+                    //   if (row.deltaP < 0) {
+                    //     return {
+                    //       classes: 'danger'
+                    //     };
+                    //   }
+                    //   return {
+                    //     classes: 'success'
+                    //   };
+                    // },
                     columns: [{
                       field: 'company',
                       align: 'left',
@@ -114,7 +126,8 @@ angular.module('stockElevenApp')
                         title: 'Delta price %',
                         align: 'right',
                         valign: 'bottom',
-                        sortable: true
+                        sortable: true,
+                        cellStyle: cellStyle
                       }, {
                         field: 'purchaseValue',
                         title: 'Purchase value',
@@ -132,7 +145,8 @@ angular.module('stockElevenApp')
                         title: 'Profit and Loss',
                         align: 'right',
                         valign: 'bottom',
-                        sortable: true
+                        sortable: true,
+                        cellStyle: cellStyle
                       }]
                   };
                 });

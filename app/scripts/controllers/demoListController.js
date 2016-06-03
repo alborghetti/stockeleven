@@ -21,7 +21,21 @@
         return {
             classes: 'success'
         };
-    }
+    };
+
+    var cellStyle = function (value, row, index) {
+
+        if (value.substr(0,1) === '-') {
+          return {
+            classes: 'SEdanger'
+          };
+        } else {
+          return {
+            classes: 'SESuccess'
+          };
+        }
+      };
+
 
     var ref = new Firebase("https://stockeleven.firebaseio.com/demoLists/" + $routeParams.listId);
 
@@ -50,7 +64,7 @@
                 showToggle: true,
                 showExport: true,
                 maintainSelected: true,
-                rowStyle: rowStyle,
+                //rowStyle: rowStyle,
                 columns: [{
                     field: 'titoloTicker',
                     align: 'left',
@@ -68,7 +82,8 @@
                     title: 'Daily variation %',
                     align: 'right',
                     valign: 'bottom',
-                    sortable: true
+                    sortable: true,
+                    cellStyle: cellStyle
                 }, {
                     field: 'pe',
                     title: 'PE',

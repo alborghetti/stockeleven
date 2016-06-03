@@ -569,5 +569,12 @@ footer.footer {
   box-shadow: 0px 0px 8px #222;
 }
 
+.SEdanger {
+    color: #d9534f;
+}
+
+.SESuccess {
+    color: #5cb85c;
+}
 
 

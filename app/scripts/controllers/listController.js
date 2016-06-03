@@ -17,13 +17,26 @@
       var rowStyle = function(row, index) {
         if (row.dailyVariationP.substr(0,1) === '-') {
           return {
-            classes: 'danger'
+            classes: 'SEdanger'
           };
         }
         return {
-          classes: 'success'
+          classes: 'SESuccess'
         };
-      }
+      };
+
+      var cellStyle = function (value, row, index) {
+
+        if (value.substr(0,1) === '-') {
+          return {
+            classes: 'SEdanger'
+          };
+        } else {
+          return {
+            classes: 'SESuccess'
+          };
+        }
+      };
 
       $scope.listId = $routeParams.listId;
 
@@ -64,7 +77,7 @@
                   clickToSelect: true,
                   showToggle: true,
                   maintainSelected: true,
-                  rowStyle: rowStyle,
+                  //rowStyle: rowStyle,
                   columns: [{
                     field: 'titoloTicker',
                     align: 'left',
@@ -82,7 +95,8 @@
                     title: 'Daily variation %',
                     align: 'right',
                     valign: 'bottom',
-                    sortable: true
+                    sortable: true,
+                    cellStyle: cellStyle
                   }, {
                     field: 'pe',
                     title: 'PE',
@@ -131,7 +145,7 @@
                   showToggle: true,
                   showExport: true,
                   maintainSelected: true,
-                  rowStyle: rowStyle,
+                  //rowStyle: rowStyle,
                   columns: [{
                     field: 'titoloTicker',
                     align: 'left',
@@ -149,7 +163,8 @@
                     title: 'Daily variation %',
                     align: 'right',
                     valign: 'bottom',
-                    sortable: true
+                    sortable: true,
+                    cellStyle: cellStyle
                   }, {
                     field: 'pe',
                     title: 'PE',
