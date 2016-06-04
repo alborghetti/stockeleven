@@ -18,7 +18,8 @@ angular
     'ngTouch',
     'firebase',
     'duScroll',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'angular-cookie-law'
   ])
   .config(function ($routeProvider) {
     $routeProvider

@@ -13,8 +13,6 @@ angular.module('stockElevenApp')
     $rootScope.$emit('viewLoaded', {});
 
     $scope.isLoggedIn = false;
-    $scope.activeLists = [];
-    $scope.inactiveLists = [];
     $scope.dataLoading = true;
 
     firebase.auth().onAuthStateChanged(function(user) {
@@ -25,6 +23,8 @@ angular.module('stockElevenApp')
       }
 
       if (userOk) {
+        $scope.activeLists = [];
+        $scope.inactiveLists = [];
         $scope.isLoggedIn = true;
         //Get all defined lists
         firebase.database().ref('/lists').once("value", function (snapshot) {

@@ -11,18 +11,21 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/bootstrap-table/src/bootstrap-table.css" />
+    <link rel="stylesheet" href="bower_components/angular-cookie-law/dist/angular-cookie-law.css" />
     <!-- endbower -->
     <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+
 </head>
 
 <body ng-app="stockElevenApp" stockeleven-window-scroll >
     <!--[if lte IE 8]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <cookie-law-banner message="This website uses cookies to ensure you get the best experience on our website"></cookie-law-banner>
     <nav class="navbar navbar-default navbar-fixed-top" ng-controller="MainCtrl">
         <div class="container">
             <div class="navbar-header">
@@ -66,12 +69,25 @@
             </div>
         </div>
     </nav>
-
+   
     <!-- Main part -->
     <div ng-view=" "></div>
+    
+    <!-- Google analytic -->
+    <cookie-law-wait>
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    <!-- Firebase statistics -->
+        ga('create', 'UA-78798007-1', 'auto');
+        ga('send', 'pageview');
 
+        </script>
+    </cookie-law-wait>
+
+    <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script>
       // Initialize Firebase
@@ -102,6 +118,7 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+    <script src="bower_components/angular-cookie-law/dist/angular-cookie-law.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
